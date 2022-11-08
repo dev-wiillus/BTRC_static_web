@@ -1,11 +1,12 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 function Layout({ children }: any) {
   return (
-    <div className="layout">
+    <div className="md:mx-xl h-full md:container">
       <Header />
       <main className="main">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

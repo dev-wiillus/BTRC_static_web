@@ -1,1 +1,8 @@
-{}
+{
+	"useTabs": true,
+	"tabWidth": 2,
+	"trailingComma": "all",
+	"orderedImports": true,
+	"bracketSpacing": true,
+	"jsxBracketSameLine": false
+}
