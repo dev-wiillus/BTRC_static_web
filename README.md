@@ -8,3 +8,11 @@
 - [ ] animation effect
 - [ ] responsive web
 - [ ] DB 연동(CR)
+- [ ] scroll 페이지 이동
+- [ ] 폰트
+
+
+## spec
+
+- TailwindCSS
+- NextJS
