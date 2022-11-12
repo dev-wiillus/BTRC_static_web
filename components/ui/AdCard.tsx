@@ -14,17 +14,17 @@ export default function AdCard({
 	description,
 }: AdCardProps) {
 	return (
-		<div className="mt-10 flex flex-col items-center gap-y-6 bg-white text-center">
+		<div className="flex w-[312px] flex-col items-center gap-y-6 bg-white text-center md:w-[360px]">
 			<div className="mt-8">
-				<p className="font-medium">
+				<p className="text-[16px] font-medium">
 					<span>{subTitle}</span>
 				</p>
-				<p className="text-3xl font-semibold">
+				<p className=" text-[32px] font-semibold">
 					<span>{title}</span>
 				</p>
 			</div>
 			<Image src={image} alt={`${title}-image`} width={80} height={218} />
-			<div className="p-4 pt-0 text-left font-bold text-secondary">
+			<div className="p-4 pt-0 text-left font-bold text-secondary md:px-10 md:pb-6">
 				{description?.map((desc, index) => (
 					<p key={index}>{desc}</p>
 				))}
