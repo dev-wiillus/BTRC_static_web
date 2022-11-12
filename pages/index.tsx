@@ -1,25 +1,34 @@
 export default function Home(props: any) {
 	return (
 		<div>
-			<div className="hero h-[800px]">
-				<div className="text-3xl font-bold">
-					<h1>지금 우리의 리얼리-사이클 #BTRC</h1>
+			<div className="hero flex h-screen flex-col bg-[url('../public/home_bg.png')]">
+				<div className="mt-auto mb-20 mr-6">
+					<p className="whitespace-pre-line text-right font-hero-hangle text-4xl text-text-light-primary">
+						<h1>
+							지금 우리의 <br />
+							리얼리-사이클
+						</h1>
+					</p>
+					<p className="mt-1 text-right font-chaney text-4xl text-primary">
+						<h1>#BTRC</h1>
+					</p>
 				</div>
+				z
 			</div>
-			<div className="how-to-use h-[800px]">
+			<div className="how-to-use flex h-screen flex-col">
 				<div className="text-3xl font-bold">
 					<h1>해볼래?</h1>
 					<h1>누구나 할 수 있어.</h1>
 				</div>
 			</div>
-			<div className="who-we-are h-[800px]">
+			<div className="who-we-are flex h-screen flex-col">
 				<div className="text-3xl font-bold">
 					<h1>가장 쉬운 실천,</h1>
 					<h1>Free Drink와 함께</h1>
 					<h1>#BTRC</h1>
 				</div>
 			</div>
-			<div className="esg h-[800px]">
+			<div className="esg flex h-screen flex-col">
 				<div className="text-3xl font-bold">
 					<h1>텀블러와 함께</h1>
 					<h1>하루 1번</h1>
