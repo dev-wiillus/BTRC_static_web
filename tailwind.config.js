@@ -14,9 +14,11 @@ module.exports = {
         "text-light-primary": "#FFFFFF",
         "text-light-secondary": "#F9F9FA",
         "text-green-secondary": "#4AAA5F",
+        "text-gray-primary": "#6C6C72",
         "button-secondary": "#2F2F37",
         "bg-primary": "#F9F9FA",
         "bg-footer": "#8A8B91",
+        "avartar-empty": "#D9D9D9"
       },
       fontFamily: {
         "hero-hangle": ['SB AggroOTF'],
