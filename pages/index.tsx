@@ -17,7 +17,6 @@ export default function Home(props: any) {
 						<h1>#BTRC</h1>
 					</p>
 				</div>
-				z
 			</div>
 			<div className="flex h-screen flex-col">
 				<div className="text-3xl font-bold">
@@ -96,20 +95,27 @@ export default function Home(props: any) {
 				</div>
 			</div>
 			<Quote />
-			<div className="flex flex-col px-6">
-				<div className="text-2xl font-bold">
-					<p className="text-base font-normal text-primary">COMING SOON</p>
-					<div className="mt-2">
-						<h1>텀블러 기부하고 수익까지!</h1>
-						<h1>
-							<span className="font-normal">#BTRC</span>의 신규 프로젝트에
-						</h1>
-						<h1>함께 해보세요.</h1>
+			<div className="md:mt-40 md:mb-[120px]">
+				<p className="px-6 text-base font-normal text-primary md:bg-button-secondary md:px-[40px] md:text-lg md:leading-[40px] md:text-white">
+					COMING SOON
+				</p>
+				<div className="grid grid-cols-1 px-6 md:grid-cols-2 md:px-[40px]">
+					<div className="text-2xl font-bold">
+						<div className="mt-2 md:mt-[40px] md:text-[40px]">
+							<h1 className="md:text-[24px]">텀블러 기부하고 수익까지!</h1>
+							<h1 className="md:mt-2">
+								<span className="font-normal md:text-[38px]">#BTRC</span>의 신규
+								프로젝트에 <br />
+								함께 해보세요.
+							</h1>
+						</div>
 					</div>
-				</div>
-				<div className="mt-10 mb-20 flex flex-col gap-y-2">
-					<Button className="btn-primary">사전 예약하기</Button>
-					<Button className="">자세히 알아보기</Button>
+					<div className="mt-10 mb-20 flex flex-col gap-y-2 md:m-0 md:flex-row md:items-end md:justify-end md:gap-x-4">
+						<Button className="btn-primary md:max-w-[272px]">
+							사전 예약하기
+						</Button>
+						<Button className="md:max-w-[272px]">자세히 알아보기</Button>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import QuoteCarousel from "../QuoteCarousel";
 
 export default function Quote() {
 	return (
-		<div className="flex h-screen flex-col px-6">
+		<div className="flex flex-col gap-y-20 px-6 md:px-[40px]">
 			<div className="flex flex-col text-[24px] font-bold md:flex-row md:justify-between md:text-[64px]">
 				<div>
 					<h1>순환 경제를 실천하는</h1>
