@@ -1,0 +1,22 @@
+/* TODO: needed chaney lower case  */
+@font-face{
+    font-family: 'CHANEY';
+    font-weight: normal;
+    font-style: normal;
+    src: url('chaney-ultraextended-webfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: local('Pretendard Variable'), url('./PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face{
+    font-family: 'SB AggroOTF';
+    font-weight: normal;
+    font-style: normal;
+    src: url('SB-Aggro-M.ttf') format('truetype');
+}
