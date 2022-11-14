@@ -2,11 +2,11 @@ import Button from "../Button";
 
 export default function Wakecup() {
 	return (
-		<div className="mt-36 px-6 md:mt-40 md:mb-[120px]">
-			<p className="font-chaney text-base font-normal text-primary md:bg-button-secondary md:px-[40px] md:text-lg md:leading-[40px] md:text-white">
+		<div className="mt-36 md:mt-40 md:mb-[120px]">
+			<p className="px-6 font-chaney text-base font-normal text-primary md:bg-button-secondary md:px-[40px] md:text-lg md:leading-[40px] md:text-white">
 				COMING SOON
 			</p>
-			<div className="grid grid-cols-1 md:grid-cols-2 md:px-[40px]">
+			<div className="grid grid-cols-1 px-6 md:grid-cols-2 md:px-[40px]">
 				<div className="text-[24px] font-bold">
 					<div className="mt-2 md:mt-[40px] md:text-[40px]">
 						<h1 className="md:text-[24px] md:font-medium">

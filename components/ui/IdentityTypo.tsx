@@ -6,7 +6,8 @@ export default function IdentityTypo() {
 				SOCIAL-IMPACT SOCIAL-IMPACT SOCIAL-IMPACT SOCIAL-IMPACT SOCIAL-IMPACT
 			</h3>
 			<h3 className="animate-[textLoop_20s_linear_infinite] text-[160px] leading-[140px]">
-				LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES
+				LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES LIVES
+				LIVES LIVES LIVES LIVES LIVES LIVES
 			</h3>
 		</div>
 	);

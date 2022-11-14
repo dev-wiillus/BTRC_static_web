@@ -1,7 +1,7 @@
 import Button from "../components/ui/Button";
-import TumblerDonation from "../components/ui/modal/TumblerDonation";
+import WakecupApplication from "../components/ui/modal/WakecupApplication";
 
-export default function TumblerDonationPage() {
+export default function WakecupPage() {
 	return (
 		<>
 			<div className="flex h-screen flex-col bg-[url('../public/images/wakecup/bg_mobile.png')] md:h-[720px] md:bg-[url('../public/images/wakecup/bg_web.png')]">
@@ -56,21 +56,19 @@ export default function TumblerDonationPage() {
 				</div>
 			</div>
 			<div className="grid grid-cols-1 gap-y-10 px-6 pt-40 pb-20 text-[24px] font-bold md:grid-cols-2 md:items-center md:px-10 md:pb-40 md:pt-[200px] md:text-[40px]">
-				<div>
-					<p>당신과 곧 만날</p>
-					<p>
-						<span className="font-chaney font-normal  md:text-[38px]">
-							#WAKECUP
-						</span>{" "}
-						프로젝트에
-					</p>
-					<p>미리 참여하세요.</p>
+				<div className="break-keep">
+					당신과 곧 만날
+					<br />
+					<span className="font-chaney font-normal md:text-[38px]">
+						#WAKECUP
+					</span>{" "}
+					프로젝트에 미리 참여하세요.
 				</div>
 				<div className="w-full max-w-[312px] md:mt-10 md:ml-auto">
 					<Button className="btn-primary">사전 예약하기</Button>
 				</div>
 			</div>
-			<TumblerDonation />
+			<WakecupApplication />
 		</>
 	);
 }

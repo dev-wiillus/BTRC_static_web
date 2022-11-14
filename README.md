@@ -2,14 +2,14 @@
 
 ## 기능 정의
 
-- [ ] Routing
+- [o] Routing
 - [ ] SEO
 - [ ] video/image rendering
 - [ ] animation effect
 - [ ] responsive web
 - [ ] DB 연동(CR)
 - [ ] scroll 페이지 이동
-- [ ] 폰트
+- [o] 폰트
 
 
 ## spec
