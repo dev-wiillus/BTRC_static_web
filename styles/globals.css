@@ -8,122 +8,206 @@ body {
   font-family: 'Pretendard'; 
 }
 
-@keyframes circle1 {
-  from{
-    transform:rotate(360deg)
-              translate(-165px)
-              rotate(-360deg);
+@keyframes circleText2 {
+  0%, 24%{
+    transform:rotate(330deg)
+              translate(-135px)
+              rotate(-330deg);
   }
-  33%{
-    transform:rotate(240deg)
-              translate(-165px)
-              rotate(-240deg);
+  27%, 57%{
+    transform:rotate(210deg)
+              translate(-135px)
+              rotate(-210deg);
   }
-  66%{
+  60%, 90%{
+    color: #8A8B90;
+    font-size: 24px;
+    font-weight: 500;
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
+  }
+  65%, 85%{
     color: #4AAA5F;
     font-size: 40px;
     font-weight: 700;
-    transform:rotate(120deg)
-              translate(-165px)
-              rotate(-120deg);
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
   }
-  to{
-    transform:rotate(0deg)
-              translate(-165px)
-              rotate(0deg);
+  93%, 100%{
+    transform:rotate(-30deg)
+              translate(-135px)
+              rotate(30deg);
   }
 }
 
-@keyframes circle2 {
-  from{
+@keyframes circleText3 {
+  0%, 19%{
     color: #4AAA5F;
     font-size: 40px;
     font-weight: 700;
-    transform:rotate(120deg)
-              translate(-165px)
-              rotate(-120deg);
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
   }
-  33%{
-    transform:rotate(0deg)
-              translate(-165px)
-              rotate(0deg);
+  24%{
+    color: #8A8B90;
+    font-size: 24px;
+    font-weight: 500;
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
   }
-  66%{
-    transform:rotate(-120deg)
-              translate(-165px)
-              rotate(120deg);
+  27%, 57%{
+    transform:rotate(-30deg)
+              translate(-135px)
+              rotate(30deg);
   }
-  to{
-    transform:rotate(-240deg)
-              translate(-165px)
-              rotate(240deg);
+  60%, 90%{
+    transform:rotate(-150deg)
+              translate(-135px)
+              rotate(150deg);
   }
-}
-
-@keyframes circle3 {
-  from{
-    transform:rotate(240deg)
-              translate(-165px)
-              rotate(-240deg);
+  93%{
+    color: #8A8B90;
+    font-size: 24px;
+    font-weight: 500;
+    transform:rotate(-270deg)
+              translate(-135px)
+              rotate(270deg);
   }
-  33%{
+  98%, 100%{
     color: #4AAA5F;
     font-size: 40px;
     font-weight: 700;
-    transform:rotate(120deg)
-              translate(-165px)
-              rotate(-120deg);
-  }
-  66%{
-    transform:rotate(0deg)
-              translate(-165px)
-              rotate(0deg);
-  }
-  to{
-    transform:rotate(-120deg)
-              translate(-165px)
-              rotate(120deg);
+    transform:rotate(-270deg)
+              translate(-135px)
+              rotate(270deg);
   }
 }
 
-@keyframes rotate1 {
-  from { transform: rotate(270deg); }
-  to { transform: rotate(-90deg); }
-}
-
-@keyframes rotate2 {
-  from { transform: rotate(30deg); }
-  to { transform: rotate(-330deg); }
-}
-
-@keyframes rotate3 {
-  from { transform: rotate(150deg); }
-  to { transform: rotate(-210deg); }
-}
-
-@keyframes textLoop {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+@keyframes circleText1 {
+  0%, 24%{
+    transform:rotate(210deg)
+              translate(-135px)
+              rotate(-210deg);
   }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+  27%, 57%{
+    color: #8A8B90;
+    font-size: 24px;
+    font-weight: 500;
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
+  }
+  37%, 47%{
+    color: #4AAA5F;
+    font-size: 40px;
+    font-weight: 700;
+    transform:rotate(90deg)
+              translate(-135px)
+              rotate(-90deg);
+  }
+  60%, 90%{
+    transform:rotate(-30deg)
+              translate(-135px)
+              rotate(30deg);
+  }
+  93%, 100%{
+    transform:rotate(-150deg)
+              translate(-135px)
+              rotate(150deg);
   }
 }
-#guideFlip div:first-child {
-  -webkit-animation: showGuide 10s linear infinite;
-  animation: showGuide 10s linear infinite;
+
+@keyframes textAngle2 {
+  0%, 24%{
+    transform:rotate(240deg);
+  }
+  27%, 57%{
+    transform:rotate(120deg);
+  }
+  60%, 90%{
+    transform:rotate(0deg);
+  }
+  93%, 100%{
+    transform:rotate(-120deg);
+  }
 }
 
-@keyframes showGuide {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
+@keyframes textAngle3 {
+  0%, 24%{
+    transform:rotate(0deg);
+  }
+  27%, 57%{
+    transform:rotate(-120deg);
+  }
+  60%, 90%{
+    transform:rotate(-240deg);
+  }
+  93%, 100%{
+    transform:rotate(-360deg);
+  }
+}
+
+@keyframes textAngle1 {
+  0%, 24%{
+    transform:rotate(120deg);
+  }
+  27%, 57%{
+    transform:rotate(0deg);
+  }
+  60%, 90%{
+    transform:rotate(-120deg);
+  }
+  93%, 100%{
+    transform:rotate(-240deg);
+  }
+}
+
+@keyframes circleInnerText3 {
+  0%, 24%{
+    opacity:1;
+  }
+  27%, 57%{
+    opacity:0;
+  }
+  60%, 90%{
+    opacity:0;
+  }
+  93%, 100%{
+    opacity:1;
+  }
+}
+
+@keyframes circleInnerText1 {
+  0%, 24%{
+    opacity:0;
+  }
+  27%, 57%{
+    opacity:1;
+  }
+  60%, 90%{
+    opacity:0;
+  }
+  93%, 100%{
+    opacity:0;
+  }
+}
+
+@keyframes circleInnerText2 {
+  0%, 24%{
+    opacity:0;
+  }
+  27%, 57%{
+    opacity:0;
+  }
+  60%, 90%{
+    opacity:1;
+  }
+  93%, 100%{
+    opacity:0;
+  }
 }
 

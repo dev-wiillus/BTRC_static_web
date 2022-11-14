@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// TODO: bottom 패딩 값이 부족
 function Footer() {
 	return (
 		<footer className="flex h-[259px] w-full flex-col gap-y-6 bg-black py-10 pl-8 md:h-[303px]">

@@ -1,3 +1,5 @@
+const { transform } = require('typescript')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -30,6 +32,40 @@ module.exports = {
         "2xs": '0.625rem',
         "3xs": '0.5rem'
       },
+      keyframes: {
+        fadeInFadeOut1: {
+          '0%, 20%, 100%': {
+            opacity: 0
+          },
+          '5%, 15%' :{
+            opacity: 1
+          },
+        },
+        fadeInFadeOut2: {
+          '0%, 20%, 80%, 100%': {
+            opacity: 0
+          },
+          '25%, 75%': {
+            opacity: 1
+          }
+        },
+        fadeInFadeOut3: {
+          '0%, 80%, 100%': {
+            opacity: 0
+          },
+          '85%, 95%' :{
+            opacity: 1
+          }
+        },
+        textLoop: {
+          '0%': {
+            transform: 'translate3d(-10%, 0, 0)'
+          },
+          '100%': {
+            transform: 'translate3d(-110%, 0, 0)'
+          }
+        }
+      }
     },
     container: {
       center: true,
