@@ -7,6 +7,7 @@ type ModalProps = {
 	hidden?: boolean;
 };
 
+// TODO: 타이틀 픽스
 export default function Modal({
 	title,
 	children,

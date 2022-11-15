@@ -8,3 +8,8 @@ export type SexType = "female" | "male" | "unselected";
 export type AgeType = "20" | "30" | "40" | "50+";
 
 export type AdPlanType = "basic" | "premium";
+
+export type ApiResponseType = {
+	ok: boolean;
+	message: string;
+};
