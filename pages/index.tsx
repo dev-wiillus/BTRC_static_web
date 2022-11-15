@@ -6,7 +6,7 @@ import Identity from "../components/ui/main/Identity";
 import Quote from "../components/ui/main/Quote";
 import Wakecup from "../components/ui/main/Wakecup";
 
-export default function Home(props: any) {
+export default function HomePage(props: any) {
 	return (
 		<div>
 			<Hero />
