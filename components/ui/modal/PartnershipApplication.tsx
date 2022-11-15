@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import useConnectNotion from "../../hooks/useConnectNotion";
 import Button from "../Button";
 import { adTypeOptions } from "../options";
-import { AdPlanType } from "../types";
+import { AdPlanType, ApiResponseType } from "../types";
 import Modal from "./Modal";
 
-interface IForm {
+export interface IForm {
 	company: string;
 	name: string;
 	email: string;
@@ -25,75 +23,19 @@ export default function PartnershipApplication() {
 		watch,
 	} = useForm<IForm>();
 
-	const notion = useConnectNotion();
-
-	// const r = async () =>
-	// 	await notion.databases.query({
-	// 		database_id: "8108766951d941a48561d2aae5a43354",
-	// 	});
-	// console.log(r());
-
 	const onSubmit = async (data: IForm) => {
 		console.log(data);
-		const response = await notion.pages.create({
-			parent: {
-				type: "database_id",
-				database_id: "8108766951d941a48561d2aae5a43354",
-			},
-			properties: {
-				company: {
-					title: [
-						{
-							text: {
-								content: data.company,
-							},
-						},
-					],
-				},
-				name: {
-					title: [
-						{
-							text: {
-								content: data.name,
-							},
-						},
-					],
-				},
-				email: {
-					title: [
-						{
-							text: {
-								content: data.email,
-							},
-						},
-					],
-				},
-				phone: {
-					title: [
-						{
-							text: {
-								content: data.phone,
-							},
-						},
-					],
-				},
-				adType: {
-					select: { name: data.adType },
-				},
-				...(data.description && {
-					description: {
-						title: [
-							{
-								text: {
-									content: data.description,
-								},
-							},
-						],
-					},
-				}),
+
+		const response = await fetch("/api/partnership", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
 			},
 		});
-		console.log(response);
+		const { ok } = (await response.json()) as ApiResponseType;
+
+		// TODO: 성공, 실패 모달 띄우기
 	};
 	return (
 		<Modal title="파트너십 문의하기">
