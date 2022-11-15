@@ -6,15 +6,15 @@ export default function WakecupPage() {
 		<>
 			<div className="flex h-screen flex-col bg-[url('../public/images/wakecup/bg_mobile.png')] md:h-[720px] md:bg-[url('../public/images/wakecup/bg_web.png')]">
 				<div className="mt-auto mb-20 ml-6 md:mb-10 md:mr-10 md:ml-auto md:text-right">
-					<p className="whitespace-pre-line font-hero-hangle text-[40px] text-text-light-primary md:text-[80px]">
-						<h1>
+					<div>
+						<h1 className="font-hero-hangle text-[40px] leading-[48px] text-text-light-primary md:text-[80px] md:leading-[96px]">
 							잠든 가치를 <br />
 							깨우는 움직임
 						</h1>
-					</p>
-					<p className="mt-1 font-chaney text-[32px] text-primary md:text-[80px]">
-						<h1>#WAKECUP</h1>
-					</p>
+						<h1 className="font-chaney text-[32px] leading-[40px] text-primary md:text-[80px] md:leading-[100px]">
+							#WAKECUP
+						</h1>
+					</div>
 					<ModalTriggerButton className="mt-10 w-[160px] md:hidden">
 						사전 예약하기
 					</ModalTriggerButton>

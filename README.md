@@ -15,4 +15,6 @@
 ## spec
 
 - TailwindCSS
+- daisyUI
 - NextJS
+- React Hook Form
