@@ -1,8 +1,4 @@
-interface RadioOptionProps {
-	label?: string;
-	value: string | number;
-	checked?: boolean;
-}
+import { RadioOptionProps } from "../types";
 
 interface RadioGroupProps {
 	title?: string;

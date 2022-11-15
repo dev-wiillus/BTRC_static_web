@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import useConnectNotion from "../../hooks/useConnectNotion";
 import Button from "../Button";
 import { adTypeOptions } from "../options";
 import { AdPlanType } from "../types";
 import Modal from "./Modal";
 
 interface IForm {
-	companyName: string;
+	company: string;
 	name: string;
 	email: string;
 	phone: string;
@@ -23,8 +25,75 @@ export default function PartnershipApplication() {
 		watch,
 	} = useForm<IForm>();
 
-	const onSubmit = (data: IForm) => {
+	const notion = useConnectNotion();
+
+	// const r = async () =>
+	// 	await notion.databases.query({
+	// 		database_id: "8108766951d941a48561d2aae5a43354",
+	// 	});
+	// console.log(r());
+
+	const onSubmit = async (data: IForm) => {
 		console.log(data);
+		const response = await notion.pages.create({
+			parent: {
+				type: "database_id",
+				database_id: "8108766951d941a48561d2aae5a43354",
+			},
+			properties: {
+				company: {
+					title: [
+						{
+							text: {
+								content: data.company,
+							},
+						},
+					],
+				},
+				name: {
+					title: [
+						{
+							text: {
+								content: data.name,
+							},
+						},
+					],
+				},
+				email: {
+					title: [
+						{
+							text: {
+								content: data.email,
+							},
+						},
+					],
+				},
+				phone: {
+					title: [
+						{
+							text: {
+								content: data.phone,
+							},
+						},
+					],
+				},
+				adType: {
+					select: { name: data.adType },
+				},
+				...(data.description && {
+					description: {
+						title: [
+							{
+								text: {
+									content: data.description,
+								},
+							},
+						],
+					},
+				}),
+			},
+		});
+		console.log(response);
 	};
 	return (
 		<Modal title="파트너십 문의하기">
@@ -38,9 +107,9 @@ export default function PartnershipApplication() {
 							type="text"
 							placeholder="회사명"
 							className="input-bordered input w-full max-w-xs focus:border-secondary focus:text-secondary"
-							{...register("companyName", { required: true })}
+							{...register("company", { required: true })}
 						/>
-						{errors.companyName?.type === "required" && (
+						{errors.company?.type === "required" && (
 							<p role="alert" className="text-error">
 								회사명을 입력하세요.
 							</p>
@@ -121,6 +190,7 @@ export default function PartnershipApplication() {
 						<textarea
 							className="textarea-bordered textarea h-[200px] w-full max-w-xs focus:border-secondary focus:text-secondary"
 							placeholder="문의 내용을 입력해주세요. (선택)"
+							{...register("description")}
 						/>
 					</div>
 				</div>

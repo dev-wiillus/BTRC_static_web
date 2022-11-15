@@ -18,3 +18,4 @@
 - daisyUI
 - NextJS
 - React Hook Form
+- Typescript
