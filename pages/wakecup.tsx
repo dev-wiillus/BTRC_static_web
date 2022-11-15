@@ -1,4 +1,4 @@
-import Button from "../components/ui/Button";
+import ModalTriggerButton from "../components/ui/modal/ModalTriggerButton";
 import WakecupApplication from "../components/ui/modal/WakecupApplication";
 
 export default function WakecupPage() {
@@ -15,12 +15,9 @@ export default function WakecupPage() {
 					<p className="mt-1 font-chaney text-[32px] text-primary md:text-[80px]">
 						<h1>#WAKECUP</h1>
 					</p>
-					<label
-						htmlFor="my-modal-3"
-						className="btn-primary btn mt-10 md:hidden"
-					>
+					<ModalTriggerButton className="mt-10 w-[160px] md:hidden">
 						사전 예약하기
-					</label>
+					</ModalTriggerButton>
 				</div>
 			</div>
 			<div className="flex flex-col items-center pt-20 text-center text-[24px] font-semibold md:text-[40px] md:text-4xl md:font-bold">
@@ -65,7 +62,7 @@ export default function WakecupPage() {
 					프로젝트에 미리 참여하세요.
 				</div>
 				<div className="w-full max-w-[312px] md:mt-10 md:ml-auto">
-					<Button className="btn-primary">사전 예약하기</Button>
+					<ModalTriggerButton>사전 예약하기</ModalTriggerButton>
 				</div>
 			</div>
 			<WakecupApplication />

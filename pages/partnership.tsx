@@ -1,7 +1,8 @@
 import AdCard from "../components/ui/AdCard";
-import Button from "../components/ui/Button";
+import ModalTriggerButton from "../components/ui/modal/ModalTriggerButton";
+import PartnershipApplication from "../components/ui/modal/PartnershipApplication";
 
-export default function Partnership() {
+export default function PartnershipPage() {
 	return (
 		<>
 			<div className="flex h-screen flex-col bg-[url('../public/images/partnership/bg_mobile.png')] md:h-[720px] md:bg-[url('../public/images/partnership/bg_web.png')]">
@@ -46,10 +47,11 @@ export default function Partnership() {
 						</div>
 					</div>
 					<div className="mt-10 w-full max-w-[312px]">
-						<Button className="btn-primary">광고 문의</Button>
+						<ModalTriggerButton>광고 문의</ModalTriggerButton>
 					</div>
 				</div>
 			</div>
+			<PartnershipApplication />
 		</>
 	);
 }

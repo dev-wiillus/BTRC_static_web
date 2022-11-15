@@ -1,4 +1,6 @@
-import { useState } from "react";
+/* 오프라인 서비스 신청 */
+
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import { ageOptions, sexOptions } from "../options";
@@ -7,14 +9,12 @@ import Modal from "./Modal";
 
 interface IForm {
 	name: string;
-	email: string;
 	phone: string;
 	sex: SexType;
 	age: AgeType;
-	expectedCount: number;
 }
 
-export default function WakecupApplication() {
+export default function ServiceApplication() {
 	const {
 		register,
 		getValues,
@@ -36,8 +36,9 @@ export default function WakecupApplication() {
 			setVerified(true);
 		}
 	};
+
 	return (
-		<Modal title="텀블러 기부 신청하기">
+		<Modal title="#BTRC 참여하기" hidden={false}>
 			<form
 				className="flex flex-col gap-y-8 pt-[48px] md:gap-y-10"
 				onSubmit={handleSubmit(onSubmit)}
@@ -53,19 +54,6 @@ export default function WakecupApplication() {
 						{errors.name?.type === "required" && (
 							<p role="alert" className="text-error">
 								이름을 입력하세요.
-							</p>
-						)}
-					</div>
-					<div>
-						<input
-							type="email"
-							className="input-bordered input w-full max-w-xs focus:border-secondary focus:text-secondary"
-							placeholder="이메일"
-							{...register("email", { required: true })}
-						/>
-						{errors.email?.type === "required" && (
-							<p role="alert" className="text-error">
-								이메일을 입력하세요.
 							</p>
 						)}
 					</div>
@@ -139,27 +127,6 @@ export default function WakecupApplication() {
 					{errors.age?.type === "required" && (
 						<p role="alert" className="text-error">
 							연령대를 선택하세요.
-						</p>
-					)}
-				</div>
-				<div className="form-control w-full text-[18px]">
-					<div className="flex flex-col items-start gap-4">
-						<label className="text-base font-bold text-text-primary">
-							기부 예정 텀블러 수
-						</label>
-						<label className="input-group">
-							<input
-								type="number"
-								className="input-bordered input w-full max-w-xs text-right focus:border-secondary focus:text-secondary"
-								defaultValue={1}
-								{...register("expectedCount", { required: true })}
-							/>
-							<span className="border bg-white">개</span>
-						</label>
-					</div>
-					{errors.expectedCount?.type === "required" && (
-						<p role="alert" className="text-error">
-							텀블러 개수를 입력하세요.
 						</p>
 					)}
 				</div>
