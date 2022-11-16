@@ -5,7 +5,7 @@ function Footer() {
 		<footer className="mt-auto flex h-[259px] w-full flex-col gap-y-6 bg-black py-10 pl-8 md:h-[303px]">
 			<div className="flex flex-col gap-y-2.5">
 				<Image
-					src="/images/logo/Wiillus.png"
+					src="/images/logo/wiillus_black.png"
 					alt="Logo"
 					width={59}
 					height={22}
