@@ -1,6 +1,6 @@
 import { RadioOptionProps } from "./types";
 
-export const sexOptions: RadioOptionProps[] = [
+export const genderOptions: RadioOptionProps[] = [
 	{ label: "여성", value: "female" },
 	{ label: "남성", value: "male" },
 	{ label: "선택 안 함", value: "unselected" },

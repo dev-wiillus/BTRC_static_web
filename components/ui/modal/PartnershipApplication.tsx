@@ -6,6 +6,8 @@ import { adTypeOptions } from "../options";
 import { AdPlanType, ApiResponseType } from "../types";
 import Modal from "./Modal";
 
+const TITLE = "파트너십 문의하기";
+
 export interface IForm {
 	company: string;
 	name: string;
@@ -25,7 +27,7 @@ export default function PartnershipApplication() {
 
 	const [visible, setVisible] = useState<boolean | null>(null);
 
-	const onSubmit = async (data: IForm) => {
+	const onSubmit = (data: IForm) => {
 		notificationCtx.showNotification({
 			title: "로딩중...",
 			message: "",
@@ -45,13 +47,13 @@ export default function PartnershipApplication() {
 				}
 
 				return res.json().then((data: ApiResponseType) => {
-					throw new Error("파트너십 문의하기가 실패하였습니다.");
+					throw new Error(`${TITLE}가 실패하였습니다.`);
 				});
 			})
 			.then((data: ApiResponseType) => {
 				notificationCtx.showNotification({
 					title: "성공!",
-					message: "파트너십 문의하기가 완료되었습니다.",
+					message: `${TITLE}가 완료되었습니다.`,
 					status: "success",
 				});
 				setVisible(false);
@@ -65,10 +67,7 @@ export default function PartnershipApplication() {
 			});
 	};
 	return (
-		<Modal
-			title="파트너십 문의하기"
-			{...(visible !== null && { hidden: !visible })}
-		>
+		<Modal title={TITLE} {...(visible !== null && { hidden: !visible })}>
 			<form
 				className="flex flex-col gap-y-8 pt-[48px] md:gap-y-10"
 				onSubmit={handleSubmit(onSubmit)}
@@ -166,7 +165,7 @@ export default function PartnershipApplication() {
 						/>
 					</div>
 				</div>
-				<Button className="btn-secondary mt-auto">신청하기</Button>
+				<Button className="btn-secondary mt-auto">문의하기</Button>
 			</form>
 		</Modal>
 	);
