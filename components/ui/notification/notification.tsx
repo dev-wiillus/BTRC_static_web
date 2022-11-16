@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { useContext } from "react";
 import NotificationContext from "../../../store/notification-context";
 
@@ -29,11 +30,12 @@ function Notification(props: NotificationProps) {
 		"cursor-pointer alert text-white fixed top-4 left-1/2 -translate-x-1/2 z-[1000] w-[96%]";
 	const activeClassName = `${notificationClassName} ${statusClassName}`;
 
-	return (
+	return ReactDOM.createPortal(
 		<div className={activeClassName} onClick={notificationCtx.hideNotification}>
 			<h2 className="m-0 text-xl">{title}</h2>
 			<p>{message}</p>
-		</div>
+		</div>,
+		document.getElementById("notifications")!,
 	);
 }
 
