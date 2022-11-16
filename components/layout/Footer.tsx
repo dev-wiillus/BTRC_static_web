@@ -24,12 +24,13 @@ function Footer() {
 			</div>
 			<div className="flex flex-col gap-y-2 text-2xs font-semibold text-text-light-primary">
 				{/* TODO: 기능 필요 */}
-				<p>
+				{/* TODO: mvp 단계에서는 주석처리 */}
+				{/* <p>
 					<span>개인정보 처리방침</span>
 				</p>
 				<p>
 					<span>Contact</span>
-				</p>
+				</p> */}
 			</div>
 			<div className="text-3xs text-text-secondary">
 				<span>Copyright © 2022 Wiillus All Rights Reserved.</span>

@@ -13,7 +13,7 @@ export default function ModalTriggerButton({
 	return (
 		<label
 			htmlFor={modalId}
-			className={`btn-primary btn w-full ${className}`}
+			className={`btn-primary btn h-[56px] w-full ${className}`}
 			{...props}
 		/>
 	);

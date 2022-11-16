@@ -25,11 +25,11 @@ export default function Wakecup() {
 						</div>
 					</div>
 					<div className="mt-10 mb-20 flex flex-col gap-y-2 md:m-0 md:flex-row md:items-end md:justify-end md:gap-x-4">
-						<ModalTriggerButton className="btn-primary md:max-w-[272px]">
+						<ModalTriggerButton className="btn-primary md:w-[272px]">
 							사전 예약하기
 						</ModalTriggerButton>
 						<Link href="wakecup">
-							<Button className="md:max-w-[272px]">자세히 알아보기</Button>
+							<Button className="md:w-[272px]">자세히 알아보기</Button>
 						</Link>
 					</div>
 				</div>
