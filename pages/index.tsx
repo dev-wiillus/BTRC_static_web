@@ -1,3 +1,5 @@
+import Head from "next/head";
+import { Fragment } from "react";
 import Brand from "../components/ui/main/Brand";
 import ESG from "../components/ui/main/ESG";
 import Guide from "../components/ui/main/Guide";
@@ -8,7 +10,14 @@ import Wakecup from "../components/ui/main/Wakecup";
 
 export default function HomePage(props: any) {
 	return (
-		<div>
+		<Fragment>
+			<Head>
+				<title>#BTRC | 지금 우리의 리얼리-사이클</title>
+				<meta
+					name="description"
+					content="가장 쉬운 실천 #텀블러 #아메리카노 #커피 #광고"
+				/>
+			</Head>
 			<Hero />
 			<Guide />
 			<Identity />
@@ -18,7 +27,7 @@ export default function HomePage(props: any) {
 			</div>
 			<Quote />
 			<Wakecup />
-		</div>
+		</Fragment>
 	);
 }
 
