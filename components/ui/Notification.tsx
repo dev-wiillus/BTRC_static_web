@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { useContext } from "react";
-import NotificationContext from "../../../store/notification-context";
+import NotificationContext from "../../store/notification-context";
 
 type NotificationProps = {
 	title: string;

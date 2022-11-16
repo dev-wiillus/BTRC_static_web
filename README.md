@@ -3,12 +3,11 @@
 ## 기능 정의
 
 - [o] Routing
-- [ ] SEO
+- [o] SEO
 - [ ] video/image rendering
 - [ ] animation effect
-- [ ] responsive web
-- [ ] DB 연동(CR)
-- [ ] scroll 페이지 이동
+- [o] responsive web
+- [o] DB 연동(CR)
 - [o] 폰트
 
 
