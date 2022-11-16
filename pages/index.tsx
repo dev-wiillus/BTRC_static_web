@@ -8,6 +8,7 @@ import Identity from "../components/ui/main/Identity";
 import Quote from "../components/ui/main/Quote";
 import Wakecup from "../components/ui/main/Wakecup";
 
+// TODO: add favicon
 export default function HomePage(props: any) {
 	return (
 		<Fragment>
