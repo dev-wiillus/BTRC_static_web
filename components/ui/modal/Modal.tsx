@@ -12,11 +12,11 @@ export default function Modal({
 	title,
 	children,
 	modalId = "modal",
-	hidden = true,
+	hidden,
 }: ModalProps) {
 	const ref = useRef<HTMLInputElement>(null);
 	useEffect(() => {
-		if (ref.current) {
+		if (ref.current && hidden !== undefined) {
 			ref.current.checked = !hidden;
 		}
 	}, [hidden]);
