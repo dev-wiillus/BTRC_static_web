@@ -1,4 +1,6 @@
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import NotificationContext from "../../../store/notification-context";
 import Button from "../Button";
 import { adTypeOptions } from "../options";
 import { AdPlanType, ApiResponseType } from "../types";
@@ -14,31 +16,59 @@ export interface IForm {
 }
 
 export default function PartnershipApplication() {
+	const notificationCtx = useContext(NotificationContext);
 	const {
 		register,
-		getValues,
-		getFieldState,
 		handleSubmit,
 		formState: { errors },
-		watch,
 	} = useForm<IForm>();
 
-	const onSubmit = async (data: IForm) => {
-		console.log(data);
+	const [visible, setVisible] = useState<boolean | null>(null);
 
-		const response = await fetch("/api/partnership", {
+	const onSubmit = async (data: IForm) => {
+		notificationCtx.showNotification({
+			title: "로딩중...",
+			message: "",
+			status: "pending",
+		});
+
+		fetch("/api/partnership", {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
 				"Content-Type": "application/json",
 			},
-		});
-		const { ok } = (await response.json()) as ApiResponseType;
+		})
+			.then((res) => {
+				if (res.ok) {
+					return res.json();
+				}
 
-		// TODO: 성공, 실패 모달 띄우기
+				return res.json().then((data: ApiResponseType) => {
+					throw new Error("파트너십 문의하기가 실패하였습니다.");
+				});
+			})
+			.then((data: ApiResponseType) => {
+				notificationCtx.showNotification({
+					title: "성공!",
+					message: "파트너십 문의하기가 완료되었습니다.",
+					status: "success",
+				});
+				setVisible(false);
+			})
+			.catch((error) => {
+				notificationCtx.showNotification({
+					title: "실패!",
+					message: error.message,
+					status: "error",
+				});
+			});
 	};
 	return (
-		<Modal title="파트너십 문의하기">
+		<Modal
+			title="파트너십 문의하기"
+			{...(visible !== null && { hidden: !visible })}
+		>
 			<form
 				className="flex flex-col gap-y-8 pt-[48px] md:gap-y-10"
 				onSubmit={handleSubmit(onSubmit)}
