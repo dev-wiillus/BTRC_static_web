@@ -1,17 +1,17 @@
 import { Client } from "@notionhq/client";
 import { NextApiRequest, NextApiResponse } from "next";
-import { IForm } from "../../components/ui/modal/PartnershipApplication";
+import { IForm } from "../../components/ui/modal/ServiceApplication";
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	try {
-		const database_id = process.env.NOTION_DATABASE_ID_PARTNERSHIP
+	try { 
+		const database_id = process.env.NOTION_DATABASE_ID_SERVICE
 		if (req.method === "POST" && database_id) {
 			const data = req.body;
 
-			const { company, name, email, phone, adType, description } =
+			const { name, phone, gender, age } =
 				data as unknown as IForm;
 
 			const notion = new Client({
@@ -24,15 +24,6 @@ export default async function handler(
 					database_id
 				},
 				properties: {
-					company: {
-						rich_text: [
-							{
-								text: {
-									content: company,
-								},
-							},
-						],
-					},
 					name: {
 						title: [
 							{
@@ -41,9 +32,6 @@ export default async function handler(
 								},
 							},
 						],
-					},
-					email: {
-						email,
 					},
 					phone: {
 						rich_text: [
@@ -54,20 +42,12 @@ export default async function handler(
 							},
 						],
 					},
-					adType: {
-						select: { name: adType },
+					age: {
+						select: { name: age },
 					},
-					...(description && {
-						description: {
-							rich_text: [
-								{
-									text: {
-										content: description,
-									},
-								},
-							],
-						},
-					}),
+					gender: {
+						select: { name: gender },
+					},
 				},
 			});
 

@@ -26,7 +26,7 @@ function Notification(props: NotificationProps) {
 		statusClassName = "alert-info";
 	}
 	const notificationClassName =
-		"cursor-pointer alert text-white fixed bottom-0 left-0 z-[1000]";
+		"cursor-pointer alert text-white fixed top-4 left-1/2 -translate-x-1/2 z-[1000] w-[96%]";
 	const activeClassName = `${notificationClassName} ${statusClassName}`;
 
 	return (

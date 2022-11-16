@@ -1,20 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import NotificationContext from "../../../store/notification-context";
 import Button from "../Button";
-import { ageOptions, sexOptions } from "../options";
-import { AgeType, SexType } from "../types";
+import { ageOptions, genderOptions } from "../options";
+import { AgeType, ApiResponseType, GenderType } from "../types";
 import Modal from "./Modal";
 
-interface IForm {
+const TITLE = "텀블러 기부 신청하기";
+
+export interface IForm {
 	name: string;
 	email: string;
 	phone: string;
-	sex: SexType;
+	gender: GenderType;
 	age: AgeType;
 	expectedCount: number;
 }
 
 export default function WakecupApplication() {
+	const notificationCtx = useContext(NotificationContext);
 	const {
 		register,
 		getValues,
@@ -24,8 +28,46 @@ export default function WakecupApplication() {
 		watch,
 	} = useForm<IForm>();
 
+	const [visible, setVisible] = useState<boolean | null>(null);
+
 	const onSubmit = (data: IForm) => {
-		console.log(data);
+		notificationCtx.showNotification({
+			title: "로딩중...",
+			message: "",
+			status: "pending",
+		});
+
+		fetch("/api/wakecup", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then((res) => {
+				if (res.ok) {
+					return res.json();
+				}
+
+				return res.json().then((data: ApiResponseType) => {
+					throw new Error(`${TITLE}가 실패하였습니다.`);
+				});
+			})
+			.then((data: ApiResponseType) => {
+				notificationCtx.showNotification({
+					title: "성공!",
+					message: `${TITLE}가 완료되었습니다.`,
+					status: "success",
+				});
+				setVisible(false);
+			})
+			.catch((error) => {
+				notificationCtx.showNotification({
+					title: "실패!",
+					message: error.message,
+					status: "error",
+				});
+			});
 	};
 
 	const [verified, setVerified] = useState(false);
@@ -37,7 +79,7 @@ export default function WakecupApplication() {
 		}
 	};
 	return (
-		<Modal title="텀블러 기부 신청하기">
+		<Modal title={TITLE} {...(visible !== null && { hidden: !visible })}>
 			<form
 				className="flex flex-col gap-y-8 pt-[48px] md:gap-y-10"
 				onSubmit={handleSubmit(onSubmit)}
@@ -94,14 +136,14 @@ export default function WakecupApplication() {
 							성별
 						</label>
 						<div className="grid grid-cols-3 gap-x-10 gap-y-4">
-							{sexOptions?.map(({ label, ...rest }) => (
+							{genderOptions?.map(({ label, ...rest }) => (
 								<div key={rest.value}>
 									<label className="flex cursor-pointer gap-x-2">
 										<input
 											type="radio"
 											className="radio checked:bg-secondary"
 											{...rest}
-											{...register("sex", { required: true })}
+											{...register("gender", { required: true })}
 										/>
 										<span className="text-base">{label}</span>
 									</label>
@@ -109,7 +151,7 @@ export default function WakecupApplication() {
 							))}
 						</div>
 					</div>
-					{errors.sex?.type === "required" && (
+					{errors.gender?.type === "required" && (
 						<p role="alert" className="text-error">
 							성별을 선택하세요.
 						</p>
