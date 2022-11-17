@@ -4,422 +4,86 @@
 
 @import url('./fonts/stylesheet.css');
 
-body {
-  font-family: 'Pretendard'; 
+.reveal {
+  position: relative;
+  opacity: 0;
 }
 
-@keyframes circleSize {
-  0%, 22%{
-    width: 360px;
-    height: 360px;
+.reveal.active {
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  24%{
-    width: 280px;
-    height: 280px;
-  }
-  27%, 57%{
-    width: 280px;
-    height: 280px;
-  }
-  29%, 55%{
-    width: 360px;
-    height: 360px;
-  }
-  60%, 90%{
-    width: 280px;
-    height: 280px;
-  }
-  62%, 88%{
-    width: 360px;
-    height: 360px;
-  }
-  93%{
-    width: 280px;
-    height: 280px;
-  }
-  95%, 100%{
-    width: 360px;
-    height: 360px;
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes mobileCircleText2 {
-  0%, 22%{
-    transform:rotate(330deg)
-              translate(-170px)
-              rotate(-330deg);
+@keyframes highlight-action1 {
+  0%, 33%, 100% {
+    font-size: 32px;
   }
-  24%{
-    transform:rotate(330deg)
-              translate(-135px)
-              rotate(-330deg);
-  }
-  27%, 57%{
-    transform:rotate(210deg)
-              translate(-135px)
-              rotate(-210deg);
-  }
-  29%, 55%{
-    transform:rotate(210deg)
-              translate(-170px)
-              rotate(-210deg);
-  }
-  60%, 90%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  62%, 88%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  93%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
-  95%, 100%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
+  2%, 31% {
+    font-size: 64px;
   }
 }
 
-@keyframes mobileCircleText3 {
-  0%, 22%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
+@keyframes highlight-action2 {
+  0%, 33%, 66%, 100% {
+    font-size: 32px;
   }
-  24%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  27%, 57%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
-  29%, 55%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
-  }
-  60%, 90%{
-    transform:rotate(-150deg)
-              translate(-135px)
-              rotate(150deg);
-  }
-  62%, 88%{
-    transform:rotate(-150deg)
-              translate(-170px)
-              rotate(150deg);
-  }
-  93%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(-270deg)
-              translate(-135px)
-              rotate(270deg);
-  }
-  95%, 100%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(-270deg)
-              translate(-170px)
-              rotate(270deg);
+  35%, 64% {
+    font-size: 64px;
   }
 }
 
-@keyframes mobileCircleText1 {
-  0%, 22%{
-    transform:rotate(210deg)
-              translate(-170px)
-              rotate(-210deg);
+@keyframes highlight-action3 {
+  0%, 66%, 99%, 100% {
+    font-size: 32px;
   }
-  24%{
-    transform:rotate(210deg)
-              translate(-135px)
-              rotate(-210deg);
-  }
-  27%, 57%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  29%, 55%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  60%, 90%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
-  62%, 88%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
-  }
-  93%{
-    transform:rotate(-150deg)
-              translate(-135px)
-              rotate(150deg);
-  }
-  95%, 100%{
-    transform:rotate(-150deg)
-              translate(-170px)
-              rotate(150deg);
+  68%, 97% {
+    font-size: 64px;
   }
 }
 
-@keyframes webCircleText2 {
-  0%, 24%{
-    transform:rotate(330deg)
-              translate(-170px)
-              rotate(-330deg);
+@keyframes highlight-text1 {
+  0%, 33%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  27%, 57%{
-    transform:rotate(210deg)
-              translate(-170px)
-              rotate(-210deg);
-  }
-  60%, 90%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  62%, 88%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  93%, 100%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
+  2%, 31% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 
-@keyframes webCircleText3 {
-  0%, 22%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
+@keyframes highlight-text2 {
+  0%, 33%, 66%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  24%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  27%, 57%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
-  }
-  60%, 90%{
-    transform:rotate(-150deg)
-              translate(-170px)
-              rotate(150deg);
-  }
-  93%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(-270deg)
-              translate(-170px)
-              rotate(270deg);
-  }
-  95%, 100%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(-270deg)
-              translate(-170px)
-              rotate(270deg);
+  35%, 64% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 
-@keyframes webCircleText1 {
-  0%, 24%{
-    transform:rotate(210deg)
-              translate(-170px)
-              rotate(-210deg);
+@keyframes highlight-text3 {
+  0%, 66%, 99%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  27%, 57%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  29%, 55%{
-    color: #4AAA5F;
-    font-size: 72px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-170px)
-              rotate(-90deg);
-  }
-  60%, 90%{
-    transform:rotate(-30deg)
-              translate(-170px)
-              rotate(30deg);
-  }
-  93%, 100%{
-    transform:rotate(-150deg)
-              translate(-170px)
-              rotate(150deg);
+  68%, 97% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
-
-@keyframes textAngle2 {
-  0%, 24%{
-    transform:rotate(240deg);
-  }
-  27%, 57%{
-    transform:rotate(120deg);
-  }
-  60%, 90%{
-    transform:rotate(0deg);
-  }
-  93%, 100%{
-    transform:rotate(-120deg);
-  }
-}
-
-@keyframes textAngle3 {
-  0%, 24%{
-    transform:rotate(0deg);
-  }
-  27%, 57%{
-    transform:rotate(-120deg);
-  }
-  60%, 90%{
-    transform:rotate(-240deg);
-  }
-  93%, 100%{
-    transform:rotate(-360deg);
-  }
-}
-
-@keyframes textAngle1 {
-  0%, 24%{
-    transform:rotate(120deg);
-  }
-  27%, 57%{
-    transform:rotate(0deg);
-  }
-  60%, 90%{
-    transform:rotate(-120deg);
-  }
-  93%, 100%{
-    transform:rotate(-240deg);
-  }
-}
-
-@keyframes circleInnerText3 {
-  0%, 19%{
-    opacity:1;
-    font-size: 40px;
-    line-height: 48px;
-    width: 252px;
-  }
-  21%{
-    opacity:0;
-  }
-  27%, 57%{
-    opacity:0;
-  }
-  60%, 90%{
-    opacity:0;
-  }
-  96%{
-    opacity:0;
-  }
-  98%, 100%{
-    opacity:1;
-    font-size: 40px;
-    line-height: 48px;
-    width: 252px;
-  }
-}
-
-@keyframes circleInnerText1 {
-  0%, 24%{
-    opacity:0;
-  }
-  30%, 54%{
-    opacity:0;
-  }
-  32%, 52%{
-    opacity:1;
-    font-size: 40px;
-    line-height: 48px;
-    width: 252px;
-  }
-  60%, 90%{
-    opacity:0;
-  }
-  93%, 100%{
-    opacity:0;
-  }
-}
-
-@keyframes circleInnerText2 {
-  0%, 24%{
-    opacity:0;
-  }
-  27%, 57%{
-    opacity:0;
-  }
-  63%, 87%{
-    opacity:0;
-  }
-  65%, 85%{
-    opacity:1;
-    font-size: 40px;
-    line-height: 48px;
-    width: 252px;
-  }
-  93%, 100%{
-    opacity:0;
-  }
-}
-
