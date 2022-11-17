@@ -77,10 +77,23 @@ export default function ServiceApplication() {
 	const [verified, setVerified] = useState(false);
 	const watchPhone = watch("phone");
 
+	// TODO: watch-phone validation check
 	const verify = () => {
 		if (watchPhone) {
 			setVerified(true);
 		}
+	};
+
+	const sendMessage = async () => {
+		const phone = getValues("phone");
+
+		fetch("/api/sendMessage", {
+			method: "POST",
+			body: JSON.stringify({ phone }),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then();
 	};
 
 	return (
@@ -111,7 +124,11 @@ export default function ServiceApplication() {
 								placeholder="전화번호"
 								{...register("phone", { required: true })}
 							/>
-							<button className="btn-secondary btn text-white" type="button">
+							<button
+								className="btn-secondary btn text-white"
+								type="button"
+								onClick={sendMessage}
+							>
 								인증
 							</button>
 						</div>

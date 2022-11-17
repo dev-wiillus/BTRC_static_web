@@ -13,7 +13,7 @@ export default function Wakecup() {
 				<div className="grid grid-cols-1 px-6 md:grid-cols-2 md:px-[40px]">
 					<div className="text-[24px] font-bold">
 						<div className="mt-2 md:mt-[40px] md:text-[40px]">
-							<h1 className="md:text-[24px] md:font-medium">
+							<h1 className="md:text-[18px] md:text-primary">
 								텀블러 기부하고 수익까지!
 							</h1>
 							<h1 className="md:mt-2 md:leading-[48px]">
