@@ -26,7 +26,9 @@ export default function AdCard({
 			<Image src={image} alt={`${title}-image`} width={80} height={218} />
 			<div className="p-4 pt-0 text-left font-bold text-secondary md:px-10 md:pb-6">
 				{description?.map((desc, index) => (
-					<p key={index}>{desc}</p>
+					<div key={index} className="flex gap-x-2">
+						· <p>{desc}</p>
+					</div>
 				))}
 			</div>
 		</div>

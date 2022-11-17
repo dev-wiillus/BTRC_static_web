@@ -11,18 +11,18 @@ export default function Guide() {
 				<h1>누구나 할 수 있어.</h1>
 			</div>
 			<div className="absolute animate-[fadeInFadeOut2_16s_linear_infinite] overflow-hidden p-[20px]">
-				<div className="h-[280px] w-[280px] rounded-full border border-border-circle text-[24px] leading-[28px] text-text-secondary">
-					<div className="absolute inset-0 m-auto animate-[circleText1_8s_linear_infinite] text-center">
+				<div className="h-[280px] w-[280px] rounded-full border border-border-circle text-[24px] leading-[28px] text-text-secondary md:h-[420px] md:w-[420px]">
+					<div className="absolute inset-0 m-auto animate-[mobileCircleText1_8s_linear_infinite] text-center md:animate-[webCircleText1_8s_linear_infinite]">
 						<span className="absolute inset-0 m-auto h-8 w-40 animate-[textAngle1_8s_linear_infinite] bg-white">
 							받고,
 						</span>
 					</div>
-					<div className="absolute inset-0 m-auto animate-[circleText2_8s_linear_infinite] text-center">
+					<div className="absolute inset-0 m-auto animate-[mobileCircleText2_8s_linear_infinite] text-center md:animate-[webCircleText2_8s_linear_infinite]">
 						<span className="absolute inset-0 m-auto h-8 w-40 animate-[textAngle2_8s_linear_infinite] bg-white">
 							즐기고,
 						</span>
 					</div>
-					<div className="absolute inset-0 m-auto animate-[circleText3_8s_linear_infinite] text-center">
+					<div className="absolute inset-0 m-auto animate-[mobileCircleText3_8s_linear_infinite] text-center md:animate-[webCircleText3_8s_linear_infinite]">
 						<span className="absolute inset-0 m-auto h-8 w-40 animate-[textAngle3_8s_linear_infinite] bg-white">
 							반납하고,
 						</span>

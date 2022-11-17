@@ -56,7 +56,7 @@ export default function QuoteCarousel() {
 		<div className="carousel-center carousel rounded-box md:space-x-3">
 			{quoteOptions.map(({ name, age, avartar, title, description }, index) => (
 				<div
-					className="carousel-item card mt-10 w-full bg-gray-50 shadow-xl md:w-1/3"
+					className="carousel-item card mt-10 w-full bg-gray-50 shadow-xl md:w-1/3 md:shadow-none"
 					key={index}
 				>
 					<div className="mt-4 flex flex-col items-center">
