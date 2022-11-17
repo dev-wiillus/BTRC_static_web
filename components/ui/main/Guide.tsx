@@ -1,62 +1,100 @@
-// TODO:client side performance optimization
-// TOOD: 사용자가 보지않을 때 잡아내기. animation-play-state 확인
+import { useEffect } from "react";
+
 export default function Guide() {
+	function reveal() {
+		var reveals = document.querySelectorAll(".reveal");
+
+		for (var i = 0; i < reveals.length; i++) {
+			var windowHeight = window.innerHeight;
+			var elementTop = reveals[i].getBoundingClientRect().top;
+			var elementVisible = 150;
+
+			if (elementTop < windowHeight - elementVisible) {
+				reveals[i].classList.add("active");
+			} else {
+				reveals[i].classList.remove("active");
+			}
+		}
+	}
+	useEffect(() => {
+		window.addEventListener("scroll", reveal);
+	}, []);
+
 	return (
-		<div
-			id="guideFlip"
-			className="relative mt-12 flex h-screen max-h-screen min-h-screen flex-col items-center justify-center overflow-hidden text-center text-[40px] font-bold leading-[44px]"
-		>
-			{/* <div className="absolute animate-[fadeInFadeOut1_16s_linear_infinite]">
+		<section className="flex min-h-screen flex-col items-center justify-center py-40 text-center">
+			<div className="reveal fade-bottom my-40 text-[40px] font-bold leading-[44px]">
 				<h1>해볼래?</h1>
 				<h1>누구나 할 수 있어.</h1>
-			</div> */}
-			{/* <div className="absolute animate-[fadeInFadeOut2_16s_linear_infinite] overflow-hidden p-[20px]"> */}
-			<div className="absolute overflow-hidden p-[20px]">
-				<div className="animate-[circleSize_8s_linear_infinite] rounded-full border border-border-circle text-[24px] leading-[28px] text-text-secondary md:h-[420px] md:w-[420px]">
-					<div className="absolute inset-0 m-auto animate-[mobileCircleText1_8s_linear_infinite] text-center md:animate-[webCircleText1_8s_linear_infinite]">
-						<span className="absolute inset-0 m-auto h-8 w-72 animate-[textAngle1_8s_linear_infinite] bg-white">
-							받고,
-						</span>
-					</div>
-					<div className="absolute inset-0 m-auto animate-[mobileCircleText2_8s_linear_infinite] text-center md:animate-[webCircleText2_8s_linear_infinite]">
-						<span className="absolute inset-0 m-auto h-8 w-72 animate-[textAngle2_8s_linear_infinite] bg-white">
-							즐기고,
-						</span>
-					</div>
-					<div className="absolute inset-0 m-auto animate-[mobileCircleText3_8s_linear_infinite] text-center md:animate-[webCircleText3_8s_linear_infinite]">
-						<span className="absolute inset-0 m-auto h-8 w-72 animate-[textAngle3_8s_linear_infinite] bg-white">
-							반납하고,
-						</span>
-					</div>
-					<div className="absolute left-1/2 top-1/3 h-[72px] w-[127px] -translate-x-1/2 -translate-y-1/3">
-						<div className="text-[20px] font-bold leading-[24px] text-secondary">
-							<span className="absolute left-1/2 top-1/2 h-[72px] w-[127px] -translate-x-1/2 -translate-y-1/2 animate-[circleInnerText1_8s_linear_infinite]">
-								원하는 텀블러에
-								<br />
-								무료커피 받고
-							</span>
-							<span className="absolute left-1/2 top-1/2 h-[72px] w-[127px] -translate-x-1/2 -translate-y-1/2 animate-[circleInnerText2_8s_linear_infinite]">
-								일주일간
-								<br />
-								즐기고
-							</span>
-							<span className="absolute left-1/2 top-1/2 h-[72px] w-[127px] -translate-x-1/2 -translate-y-1/2 animate-[circleInnerText3_8s_linear_infinite]">
-								BTRC 스팟에
-								<br />
-								반납하고
-							</span>
-						</div>
-					</div>
+			</div>
+
+			<div className="md:hidden">
+				<div className="reveal fade-bottom my-40 font-bold">
+					<span className="text-[64px]">받고,</span>
+					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+						원하는 텀블러에
+						<br />
+						무료커피 받고
+					</p>
+				</div>
+				<div className="reveal fade-bottom my-40 font-bold">
+					<span className="text-[64px] font-bold">즐기고,</span>
+					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+						일주일간
+						<br />
+						즐기고
+					</p>
+				</div>
+				<div className="reveal fade-bottom my-40 font-bold">
+					<span className="text-[64px] font-bold">반납하고,</span>
+					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+						BTRC 스팟에
+						<br />
+						반납하고
+					</p>
 				</div>
 			</div>
-			{/* <div className="absolute animate-[fadeInFadeOut3_16s_linear_infinite]">
-				<h1 className="mb-4 text-[32px] font-medium md:hidden">그리고</h1>
+
+			<div className="reveal fade-bottom my-40 hidden h-[250px] w-full items-center font-bold md:flex">
+				<div className="flex-1">
+					<span className="animate-[highlight-action1_8s_linear_infinite]">
+						받고,
+					</span>
+					<p className="mt-[73px] animate-[highlight-text1_8s_linear_infinite] text-text-gray-primary">
+						원하는 텀블러에
+						<br />
+						무료커피 받고
+					</p>
+				</div>
+				<div className="flex-1">
+					<span className="animate-[highlight-action2_8s_linear_infinite]">
+						즐기고,
+					</span>
+					<p className="mt-[73px] animate-[highlight-text2_8s_linear_infinite] text-text-gray-primary">
+						일주일간
+						<br />
+						즐기고
+					</p>
+				</div>
+				<div className="flex-1">
+					<span className="animate-[highlight-action3_8s_linear_infinite]">
+						반납하고,
+					</span>
+					<p className="mt-[73px] animate-[highlight-text3_8s_linear_infinite] text-text-gray-primary">
+						BTRC 스팟에
+						<br />
+						반납하고
+					</p>
+				</div>
+			</div>
+
+			<div className="reveal fade-bottom my-40 text-[40px] font-bold leading-[45px]">
+				<h1 className="mb-4 text-[32px] font-medium">그리고</h1>
 				<h1>세척과 살균은</h1>
 				<h1>
-					<span className="font-chaney text-[36px]">BTRC</span>가
-					<span className="hidden md:block"> 해줄게.</span>
+					<span className="font-chaney text-[36px] font-normal">BTRC</span>가
+					<span className="hidden md:ml-3 md:inline-block"> 해줄게.</span>
 				</h1>
-			</div> */}
-		</div>
+			</div>
+		</section>
 	);
 }
