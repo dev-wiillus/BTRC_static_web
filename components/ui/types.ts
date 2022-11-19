@@ -13,3 +13,8 @@ export type ApiResponseType = {
 	ok: boolean;
 	message: string;
 };
+
+export type AuthenticationType = {
+	phone: string;
+	code: string;
+}
