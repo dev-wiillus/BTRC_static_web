@@ -1,7 +1,7 @@
 /* 오프라인 서비스 신청 */
 
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import NotificationContext from "../../../store/notification-context";
 import Button from "../Button";
@@ -25,12 +25,11 @@ export default function ServiceApplication() {
 	const {
 		register,
 		getValues,
-		getFieldState,
 		handleSubmit,
 		formState: { isValid, errors },
 		watch,
-		setError,
 		trigger,
+		reset,
 	} = useForm<IForm>();
 	const router = useRouter();
 
@@ -66,6 +65,7 @@ export default function ServiceApplication() {
 					status: "success",
 				});
 				setVisible(false);
+				reset();
 				router.push("/");
 			})
 			.catch((error) => {
