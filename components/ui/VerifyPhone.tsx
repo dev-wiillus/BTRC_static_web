@@ -31,7 +31,7 @@ export default function VerifyPhone({
 
 	const expiryTimestamp = new Date();
 	expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + 60 * 3);
-	const { seconds, minutes, restart } = useTimer({ expiryTimestamp });
+	const { seconds, minutes, restart, pause } = useTimer({ expiryTimestamp });
 
 	const sendMessage = () => {
 		fetch("/api/sendMessage", {
@@ -68,13 +68,15 @@ export default function VerifyPhone({
 				},
 			);
 			if (ok) {
+				pause();
 				return true;
 			}
 		}
 		return false;
 	};
 
-	const verified = !errors.authenticationCode && watch("authenticationCode");
+	const verified =
+		!errors.authenticationCode && watch("authenticationCode")?.length === 6;
 	return (
 		<>
 			<div className="form-control">
@@ -127,7 +129,7 @@ export default function VerifyPhone({
 						validate: validateAuth,
 					})}
 				/>
-				{sendedMessage && (
+				{sendedMessage && !verified && (
 					<p role="alert" className="absolute top-1/2 right-4 -translate-y-1/2">
 						<span className="countdown font-mono text-text-gray-primary">
 							<span style={{ "--value": minutes } as CSSProperties}></span>:
