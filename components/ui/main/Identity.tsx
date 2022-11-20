@@ -19,7 +19,7 @@ export default function Identity() {
 				<div className="flex pt-[22px] font-chaney text-[32px] font-black">
 					<div className="flex flex-1 flex-col overflow-hidden">
 						<div className="ml-[23px]">
-							<h1>#BTRC</h1>
+							<h1 className="font-normal">#BTRC</h1>
 						</div>
 						<div className="mt-[-30px] mb-[60px] whitespace-nowrap">
 							<IdentityTypo />
@@ -32,11 +32,11 @@ export default function Identity() {
 						</div>
 					</div>
 					<div className="flex flex-1 justify-around">
-						<h1>#BTRC</h1>
-						<h1>#BTRC</h1>
+						<h1 className="font-normal">#BTRC</h1>
+						<h1 className="font-normal">#BTRC</h1>
 					</div>
 				</div>
-				<div className="absolute right-[40px] bottom-[40px] bg-black px-2 text-[40px] leading-[48px] text-primary">
+				<div className="absolute right-[40px] bottom-[40px] bg-white px-2 text-right text-[40px] font-black leading-[48px] text-primary">
 					<h1>가장 쉬운 실천,</h1>
 					<h1>Free Drink와 함께</h1>
 				</div>
