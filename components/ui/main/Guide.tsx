@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { useEffect } from "react";
+import AdCard from "../partnership/AdCard";
 
 export default function Guide() {
 	function reveal() {
@@ -30,7 +32,15 @@ export default function Guide() {
 			<div className="md:hidden">
 				<div className="reveal fade-bottom my-40 font-bold">
 					<span className="text-[64px]">받고,</span>
-					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+					<div className="mt-[53px]">
+						<Image
+							src="/images/main/identity_grab.png"
+							width={302.6}
+							height={275}
+							alt="identity-grab"
+						/>
+					</div>
+					<p className="mt-[73px] text-[24px] leading-[28.8px] text-text-gray-primary">
 						원하는 텀블러에
 						<br />
 						무료커피 받고
@@ -38,7 +48,15 @@ export default function Guide() {
 				</div>
 				<div className="reveal fade-bottom my-40 font-bold">
 					<span className="text-[64px] font-bold">즐기고,</span>
-					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+					<div className="mt-[53px]">
+						<Image
+							src="/images/main/identity_put.png"
+							width={302.6}
+							height={275}
+							alt="identity-put"
+						/>
+					</div>
+					<p className="mt-[73px] text-[24px] leading-[28.8px] text-text-gray-primary">
 						일주일간
 						<br />
 						즐기고
@@ -46,7 +64,15 @@ export default function Guide() {
 				</div>
 				<div className="reveal fade-bottom my-40 font-bold">
 					<span className="text-[64px] font-bold">반납하고,</span>
-					<p className="mt-[73px] text-[30px] leading-[36px] text-text-gray-primary">
+					<div className="mt-[53px]">
+						<Image
+							src="/images/main/identity_put.png"
+							width={302.6}
+							height={275}
+							alt="identity-put"
+						/>
+					</div>
+					<p className="mt-[73px] text-[24px] leading-[28.8px] text-text-gray-primary">
 						BTRC 스팟에
 						<br />
 						반납하고
@@ -54,16 +80,24 @@ export default function Guide() {
 				</div>
 			</div>
 
-			<div className="reveal fade-bottom my-40 hidden h-[250px] w-full items-center font-bold md:flex">
+			<div className="reveal fade-bottom my-40 hidden h-[250px] w-full items-center px-[80px] font-bold md:flex">
 				<div className="flex-1">
 					<span className="animate-[highlight-action1_8s_linear_infinite]">
 						받고,
 					</span>
-					<p className="mt-[73px] animate-[highlight-text1_8s_linear_infinite] text-text-gray-primary">
-						원하는 텀블러에
-						<br />
-						무료커피 받고
-					</p>
+					<div className="relative h-[275px] w-[302.6px] rounded-[1rem]">
+						<Image
+							src="/images/main/identity_grab.png"
+							layout="fill"
+							objectFit="cover"
+							alt="identity-grab"
+						/>
+						{/* <p className="mt-[73px] animate-[highlight-text1_8s_linear_infinite] text-text-gray-primary">
+							원하는 텀블러에
+							<br />
+							무료커피 받고
+						</p> */}
+					</div>
 				</div>
 				<div className="flex-1">
 					<span className="animate-[highlight-action2_8s_linear_infinite]">

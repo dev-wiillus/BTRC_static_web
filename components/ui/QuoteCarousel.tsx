@@ -68,8 +68,10 @@ export default function QuoteCarousel() {
 						</div>
 					</div>
 					<div className="card-body">
-						<h2 className="card-title text-[18px] font-bold">{title}</h2>
-						<p className="text-[16px] font-medium text-text-gray-primary">
+						<h2 className="card-title text-[18px] font-bold md:text-[28px]">
+							{title}
+						</h2>
+						<p className="text-[16px] font-medium text-text-gray-primary md:text-[18px]">
 							{description}
 						</p>
 					</div>
