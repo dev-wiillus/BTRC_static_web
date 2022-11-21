@@ -1,6 +1,7 @@
 import twilio from "twilio";
 import { NextApiRequest, NextApiResponse } from "next";
 import { IForm } from "../../components/ui/modal/ServiceApplication";
+import cache from "../../components/utils/cache";
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -26,9 +27,11 @@ export default async function handler(
 
 			const randomNumber = generateRandomNumber();
 
-			const result = await client.messages.create({
+			cache.set(userPhoneNumber, randomNumber?.toString());
+			
+			const result = await client.messages.create({ 
 				from: twilioPhoneNumber,
-				to: userPhoneNumber,
+				to: `+82${userPhoneNumber}`,
 				body: `[#BTRC] 인증번호 [${randomNumber}]를 입력해주세요.`,
 			});
 

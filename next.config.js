@@ -25,6 +25,9 @@ const nextConfig = (phase) => {
 		reactStrictMode: true,
 		swcMinify: true,
 		env: {
+			TWILIO_ACCOUNT_SID: "AC3b6d6f424aad228f3ed62d6a1d83ba5e",
+			TWILIO_AUTH_TOKEN: "f3f48da80bbbe2bc4c3be6604e9527d2",
+			TWILIO_PHONE_NUMBER: "+16614664585",
 			NOTION_TOKEN: "secret_tVsFf68phTkiIQuTqGDlrIapwrLjoYIaBvm2xF0kyaj",
 			...env_params,
 		},

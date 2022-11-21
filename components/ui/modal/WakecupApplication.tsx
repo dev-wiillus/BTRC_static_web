@@ -4,6 +4,7 @@ import NotificationContext from "../../../store/notification-context";
 import Button from "../Button";
 import { ageOptions, genderOptions } from "../options";
 import { AgeType, ApiResponseType, GenderType } from "../types";
+import VerifyPhone from "../VerifyPhone";
 import Modal from "./Modal";
 
 const TITLE = "텀블러 기부 신청하기";
@@ -22,10 +23,11 @@ export default function WakecupApplication() {
 	const {
 		register,
 		getValues,
-		getFieldState,
 		handleSubmit,
-		formState: { errors },
+		formState: { isValid, errors },
 		watch,
+		trigger,
+		reset,
 	} = useForm<IForm>();
 
 	const [visible, setVisible] = useState<boolean | null>(null);
@@ -60,6 +62,7 @@ export default function WakecupApplication() {
 					status: "success",
 				});
 				setVisible(false);
+				reset();
 			})
 			.catch((error) => {
 				notificationCtx.showNotification({
@@ -70,14 +73,6 @@ export default function WakecupApplication() {
 			});
 	};
 
-	const [verified, setVerified] = useState(false);
-	const watchPhone = watch("phone");
-
-	const verify = () => {
-		if (watchPhone) {
-			setVerified(true);
-		}
-	};
 	return (
 		<Modal title={TITLE} {...(visible !== null && { hidden: !visible })}>
 			<form
@@ -111,24 +106,13 @@ export default function WakecupApplication() {
 							</p>
 						)}
 					</div>
-					<div>
-						<div className="flex gap-2">
-							<input
-								type="text"
-								className="input-bordered input w-full max-w-xs focus:border-secondary focus:text-secondary"
-								placeholder="전화번호"
-								{...register("phone", { required: true })}
-							/>
-							<button className="btn-secondary btn text-white" type="button">
-								인증
-							</button>
-						</div>
-						{errors.phone?.type === "required" && (
-							<p role="alert" className="text-error">
-								전화번호를 입력하세요.
-							</p>
-						)}
-					</div>
+					<VerifyPhone
+						register={register}
+						getValues={getValues}
+						trigger={trigger}
+						watch={watch}
+						errors={errors}
+					/>
 				</div>
 				<div className="form-control w-full text-[18px]">
 					<div className="flex flex-col items-start gap-4">
@@ -205,7 +189,9 @@ export default function WakecupApplication() {
 						</p>
 					)}
 				</div>
-				<Button className="btn-secondary mt-auto">신청하기</Button>
+				<Button className="btn-secondary mt-auto" disabled={!isValid}>
+					신청하기
+				</Button>
 			</form>
 		</Modal>
 	);
