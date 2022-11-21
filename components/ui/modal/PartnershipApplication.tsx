@@ -23,6 +23,7 @@ export default function PartnershipApplication() {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm<IForm>();
 
 	const [visible, setVisible] = useState<boolean | null>(null);
@@ -57,6 +58,7 @@ export default function PartnershipApplication() {
 					status: "success",
 				});
 				setVisible(false);
+				reset();
 			})
 			.catch((error) => {
 				notificationCtx.showNotification({

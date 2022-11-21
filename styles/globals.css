@@ -4,323 +4,131 @@
 
 @import url('./fonts/stylesheet.css');
 
-body {
-  font-family: 'Pretendard'; 
+.reveal {
+  position: relative;
+  opacity: 0;
 }
 
-@keyframes mobileCircleText2 {
-  0%, 24%{
-    transform:rotate(330deg)
-              translate(-135px)
-              rotate(-330deg);
-  }
-  27%, 57%{
-    transform:rotate(210deg)
-              translate(-135px)
-              rotate(-210deg);
-  }
-  60%, 90%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  65%, 85%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  93%, 100%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
+.reveal.active {
+  opacity: 1;
 }
 
-@keyframes mobileCircleText3 {
-  0%, 19%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
+.active.fade-top {
+  animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+
+@keyframes fade-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  24%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  27%, 57%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
-  60%, 90%{
-    transform:rotate(-150deg)
-              translate(-135px)
-              rotate(150deg);
-  }
-  93%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(-270deg)
-              translate(-135px)
-              rotate(270deg);
-  }
-  98%, 100%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(-270deg)
-              translate(-135px)
-              rotate(270deg);
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes mobileCircleText1 {
-  0%, 24%{
-    transform:rotate(210deg)
-              translate(-135px)
-              rotate(-210deg);
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  27%, 57%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  37%, 47%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-135px)
-              rotate(-90deg);
-  }
-  60%, 90%{
-    transform:rotate(-30deg)
-              translate(-135px)
-              rotate(30deg);
-  }
-  93%, 100%{
-    transform:rotate(-150deg)
-              translate(-135px)
-              rotate(150deg);
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes webCircleText2 {
-  0%, 24%{
-    transform:rotate(330deg)
-              translate(-200px)
-              rotate(-330deg);
+@keyframes fade-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
   }
-  27%, 57%{
-    transform:rotate(210deg)
-              translate(-200px)
-              rotate(-210deg);
-  }
-  60%, 90%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
-  }
-  65%, 85%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
-  }
-  93%, 100%{
-    transform:rotate(-30deg)
-              translate(-200px)
-              rotate(30deg);
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes webCircleText3 {
-  0%, 19%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
+@keyframes fade-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
   }
-  24%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
-  }
-  27%, 57%{
-    transform:rotate(-30deg)
-              translate(-200px)
-              rotate(30deg);
-  }
-  60%, 90%{
-    transform:rotate(-150deg)
-              translate(-200px)
-              rotate(150deg);
-  }
-  93%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(-270deg)
-              translate(-200px)
-              rotate(270deg);
-  }
-  98%, 100%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(-270deg)
-              translate(-200px)
-              rotate(270deg);
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes webCircleText1 {
-  0%, 24%{
-    transform:rotate(210deg)
-              translate(-200px)
-              rotate(-210deg);
+@keyframes highlight-action1 {
+  0%, 33%, 100% {
+    font-size: 32px;
   }
-  27%, 57%{
-    color: #8A8B90;
-    font-size: 24px;
-    font-weight: 500;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
-  }
-  37%, 47%{
-    color: #4AAA5F;
-    font-size: 40px;
-    font-weight: 700;
-    transform:rotate(90deg)
-              translate(-200px)
-              rotate(-90deg);
-  }
-  60%, 90%{
-    transform:rotate(-30deg)
-              translate(-200px)
-              rotate(30deg);
-  }
-  93%, 100%{
-    transform:rotate(-150deg)
-              translate(-200px)
-              rotate(150deg);
+  2%, 31% {
+    font-size: 64px;
   }
 }
 
-@keyframes textAngle2 {
-  0%, 24%{
-    transform:rotate(240deg);
+@keyframes highlight-action2 {
+  0%, 33%, 66%, 100% {
+    font-size: 32px;
   }
-  27%, 57%{
-    transform:rotate(120deg);
-  }
-  60%, 90%{
-    transform:rotate(0deg);
-  }
-  93%, 100%{
-    transform:rotate(-120deg);
+  35%, 64% {
+    font-size: 64px;
   }
 }
 
-@keyframes textAngle3 {
-  0%, 24%{
-    transform:rotate(0deg);
+@keyframes highlight-action3 {
+  0%, 66%, 99%, 100% {
+    font-size: 32px;
   }
-  27%, 57%{
-    transform:rotate(-120deg);
-  }
-  60%, 90%{
-    transform:rotate(-240deg);
-  }
-  93%, 100%{
-    transform:rotate(-360deg);
+  68%, 97% {
+    font-size: 64px;
   }
 }
 
-@keyframes textAngle1 {
-  0%, 24%{
-    transform:rotate(120deg);
+@keyframes highlight-text1 {
+  0%, 33%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  27%, 57%{
-    transform:rotate(0deg);
-  }
-  60%, 90%{
-    transform:rotate(-120deg);
-  }
-  93%, 100%{
-    transform:rotate(-240deg);
+  2%, 31% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 
-@keyframes circleInnerText3 {
-  0%, 24%{
-    opacity:1;
+@keyframes highlight-text2 {
+  0%, 33%, 66%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  27%, 57%{
-    opacity:0;
-  }
-  60%, 90%{
-    opacity:0;
-  }
-  93%, 100%{
-    opacity:1;
+  35%, 64% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 
-@keyframes circleInnerText1 {
-  0%, 24%{
-    opacity:0;
+@keyframes highlight-text3 {
+  0%, 66%, 99%, 100% {
+    font-size: 16px;
+    line-height: 18px;
   }
-  27%, 57%{
-    opacity:1;
-  }
-  60%, 90%{
-    opacity:0;
-  }
-  93%, 100%{
-    opacity:0;
+  68%, 97% {
+    font-size: 30px;
+    line-height: 36px;
   }
 }
-
-@keyframes circleInnerText2 {
-  0%, 24%{
-    opacity:0;
-  }
-  27%, 57%{
-    opacity:0;
-  }
-  60%, 90%{
-    opacity:1;
-  }
-  93%, 100%{
-    opacity:0;
-  }
-}
-
