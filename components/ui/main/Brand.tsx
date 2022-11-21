@@ -19,43 +19,30 @@ export default function Brand() {
 				</div>
 				<div className="flex flex-col items-center gap-y-8 md:gap-y-[50px]">
 					<div className="relative h-[27.17px] w-[87.54px] md:h-[44px] md:w-[143px]">
-						<Image
-							src="/images/logo/SOCAR.png"
-							alt="brand-SOCAR"
-							layout="fill"
-							objectFit="cover"
-						/>
+						<Image src="/images/logo/SOCAR.png" alt="brand-SOCAR" fill />
 					</div>
 					<div className="relative h-[27.17px] w-[86.79px] md:h-[43px] md:w-[141px]">
-						<Image
-							src="/images/logo/FRIP.png"
-							alt="brand-FRIP"
-							layout="fill"
-							objectFit="cover"
-						/>
+						<Image src="/images/logo/FRIP.png" alt="brand-FRIP" fill />
 					</div>
 					<div className="relative h-[19.62px] w-[143.39px] md:h-[33px] md:w-[231px]">
 						<Image
 							src="/images/logo/FRESHCODE.png"
 							alt="brand-FRESHCODE"
-							layout="fill"
-							objectFit="cover"
+							fill
 						/>
 					</div>
 					<div className="relative h-[47.54px] w-[66.41px] md:h-[75px] md:w-[108px]">
 						<Image
 							src="/images/logo/HEYGROUND.png"
 							alt="brand-HEYGROUND"
-							layout="fill"
-							objectFit="cover"
+							fill
 						/>
 					</div>
 					<div className="relative h-[24.9px] w-[128.29px] md:h-[40px] md:w-[208px]">
 						<Image
 							src="/images/logo/Skelter-Labs.png"
 							alt="brand-Skelter-Labs"
-							layout="fill"
-							objectFit="cover"
+							fill
 						/>
 					</div>
 				</div>

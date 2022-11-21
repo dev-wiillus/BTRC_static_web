@@ -72,7 +72,7 @@ export default function VerifyPhone({
 				return true;
 			}
 		}
-		return false;
+		return "인증번호가 올바르지 않습니다.";
 	};
 
 	const verified =
@@ -130,7 +130,10 @@ export default function VerifyPhone({
 					})}
 				/>
 				{sendedMessage && !verified && (
-					<p role="alert" className="absolute top-1/2 right-4 -translate-y-1/2">
+					<p
+						role="alert"
+						className="absolute top-[24px] right-4 -translate-y-1/2"
+					>
 						<span className="countdown font-mono text-text-gray-primary">
 							<span style={{ "--value": minutes } as CSSProperties}></span>:
 							<span style={{ "--value": seconds } as CSSProperties}></span>

@@ -2,10 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { AuthenticationType } from "../../components/ui/types";
 import cache from "../../components/utils/cache";
 
-// TODO: 첫번째 인증은 노드 캐시에 저장안되는 버그
 export default function handler(
 	req: NextApiRequest,
-	res: NextApiResponse,){
+	res: NextApiResponse,
+) {
     try{
         const data = req.query;
 
@@ -14,13 +14,12 @@ export default function handler(
         const cachedCode = cache.get(phone);
 
         if (cachedCode && cachedCode === code){
-        res.status(200).json({ ok: true, message: "Success" });
+            res.status(200).json({ ok: true, message: "Success" });
 		}
         else{
-        res.status(400).json({ ok: false, message: "Fail" });
+            res.status(400).json({ ok: false, message: "Fail" });
         }
 	} catch (error) { 
 		res.status(400).json({ ok: false, message: "Fail" });
 	}
-    
 }
