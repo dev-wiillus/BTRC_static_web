@@ -13,7 +13,7 @@ export default function ESG() {
 					<h1 className="font-black">33배 감소</h1>
 				</div>
 			</div>
-			<div className="relative w-full bg-bg-primary md:h-[520px]">
+			<div className="relative flex w-full justify-center bg-bg-primary md:h-[520px]">
 				<div className="h-[520px] w-[360px] md:hidden">
 					<Image
 						src="/images/main/chart_esg_mobile.png"

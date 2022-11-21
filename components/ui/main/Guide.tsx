@@ -89,8 +89,7 @@ export default function Guide() {
 					<div className="relative h-[275px] w-[302.6px] rounded-[1rem]">
 						<Image
 							src="/images/main/identity_grab.png"
-							layout="fill"
-							objectFit="cover"
+							fill
 							alt="identity-grab"
 						/>
 					</div>
@@ -115,8 +114,7 @@ export default function Guide() {
 					<div className="relative h-[275px] w-[302.6px] rounded-[1rem]">
 						<Image
 							src="/images/main/identity_put.png"
-							layout="fill"
-							objectFit="cover"
+							fill
 							alt="identity-grab"
 						/>
 					</div>
@@ -125,8 +123,7 @@ export default function Guide() {
 					<div className="relative h-[275px] w-[302.6px] rounded-[1rem]">
 						<Image
 							src="/images/main/identity_grab.png"
-							layout="fill"
-							objectFit="cover"
+							fill
 							alt="identity-grab"
 						/>
 					</div>

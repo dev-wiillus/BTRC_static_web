@@ -23,7 +23,13 @@ export default function AdCard({
 					<span>{title}</span>
 				</p>
 			</div>
-			<Image src={image} alt={`${title}-image`} width={80} height={218} />
+			<Image
+				src={image}
+				alt={`${title}-image`}
+				width={80}
+				height={218}
+				priority
+			/>
 			<div className="p-4 pt-0 text-left font-bold text-secondary md:px-10 md:pb-6">
 				{description?.map((desc, index) => (
 					<p key={index}>{desc}</p>
