@@ -32,7 +32,9 @@ export default function AdPlan() {
 					</div>
 				</div>
 				<div className="mt-10 w-full max-w-[312px]">
-					<ModalTriggerButton>광고 문의</ModalTriggerButton>
+					<ModalTriggerButton className="text-[16px]">
+						광고 문의
+					</ModalTriggerButton>
 				</div>
 			</div>
 		</div>

@@ -1,26 +1,8 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import useRevealAnimation from "../../utils/useRevealAnimation";
 
 export default function Guide() {
-	function reveal() {
-		var reveals = document.querySelectorAll(".reveal");
-
-		for (var i = 0; i < reveals.length; i++) {
-			var windowHeight = window.innerHeight;
-			var elementTop = reveals[i].getBoundingClientRect().top;
-			var elementVisible = 150;
-
-			if (elementTop < windowHeight - elementVisible) {
-				reveals[i].classList.add("active");
-			} else {
-				reveals[i].classList.remove("active");
-			}
-		}
-	}
-	useEffect(() => {
-		window.addEventListener("scroll", reveal);
-	}, []);
-
+	useRevealAnimation();
 	return (
 		<section className="relative flex min-h-screen flex-col items-center py-40 text-center md:h-[2446px]">
 			<div className="reveal fade-bottom my-40 text-[40px] font-bold leading-[44px] md:text-secondary">
