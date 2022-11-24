@@ -9,10 +9,10 @@ export default function WakecupPage() {
 	return (
 		<Fragment>
 			<Head>
-				<title>#BTRC | 텀블러 기부</title>
+				<title>BTRC | 텀블러 공유</title>
 				<meta
 					name="description"
-					content="잠든 가치를 깨우는 움직임 #텀블러 #기부 #wakecup"
+					content="잠든 가치를 깨우는 움직임 #텀블러 #기부 #공유 #wakecup"
 				/>
 			</Head>
 			<Hero />

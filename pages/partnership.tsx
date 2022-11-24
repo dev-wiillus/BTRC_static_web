@@ -8,7 +8,7 @@ export default function PartnershipPage() {
 	return (
 		<Fragment>
 			<Head>
-				<title>#BTRC | 파트너십</title>
+				<title>BTRC | 파트너십</title>
 				<meta name="description" content="누구보다 가까이 #파트너십 #광고" />
 			</Head>
 			<Hero />

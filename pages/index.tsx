@@ -13,7 +13,7 @@ export default function HomePage(props: any) {
 	return (
 		<Fragment>
 			<Head>
-				<title>#BTRC | 지금 우리의 리얼리-사이클</title>
+				<title>BTRC | 지금 우리의 리얼리-사이클</title>
 				<meta
 					name="description"
 					content="가장 쉬운 실천 #텀블러 #아메리카노 #커피 #광고"
