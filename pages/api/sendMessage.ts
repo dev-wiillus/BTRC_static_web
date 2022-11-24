@@ -32,7 +32,7 @@ export default async function handler(
 			const result = await client.messages.create({ 
 				from: twilioPhoneNumber,
 				to: `+82${userPhoneNumber}`,
-				body: `[#BTRC] 인증번호 [${randomNumber}]를 입력해주세요.`,
+				body: `[BTRC] 인증번호 [${randomNumber}]를 입력해주세요.`,
 			});
 
 			res.status(200).json({ ok: true, message: "Success" });
