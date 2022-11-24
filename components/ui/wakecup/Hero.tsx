@@ -1,8 +1,13 @@
+import Container from "../Hero/Container";
 import ModalTriggerButton from "../modal/ModalTriggerButton";
 
 export default function Hero() {
 	return (
-		<div className="flex h-screen flex-col bg-[url('../public/images/wakecup/bg_mobile.png')] md:h-[720px] md:bg-[url('../public/images/wakecup/bg_web.png')]">
+		<Container
+			title="wakecup"
+			bgSrcMobile="/images/wakecup/bg_mobile.png"
+			bgSrcWeb="/images/wakecup/bg_web.png"
+		>
 			<div className="mt-auto mb-20 ml-6 md:mb-10 md:mr-10 md:ml-auto md:text-right">
 				<div>
 					<h1 className="font-hero-hangle text-[40px] leading-[48px] text-text-light-primary md:text-[80px] md:leading-[96px]">
@@ -17,6 +22,6 @@ export default function Hero() {
 					사전 예약하기
 				</ModalTriggerButton>
 			</div>
-		</div>
+		</Container>
 	);
 }

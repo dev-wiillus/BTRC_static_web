@@ -1,5 +1,5 @@
-import Image from "next/image";
 import useRevealAnimation from "../../utils/useRevealAnimation";
+import ResponsiveImage from "../ResponsiveImage";
 
 export default function Guide() {
 	useRevealAnimation();
@@ -10,49 +10,45 @@ export default function Guide() {
 				<h1>텀블러, 공유하고</h1>
 				<h1>수익까지.</h1>
 			</div>
-			<div className="grid grid-cols-1 gap-y-[100px] md:grid-cols-2 md:gap-x-8">
-				<div className="flex flex-col items-center md:rounded-[30px] md:bg-[#EAF4EC] md:px-[80px] md:pt-[69px] md:pb-[43px]">
+			<div className="grid grid-cols-1 gap-y-[100px] md:gap-x-8 lg:grid-cols-2">
+				<div className="flex flex-col items-center md:px-[80px] md:pt-[69px] md:pb-[43px] lg:rounded-[30px] lg:bg-[#EAF4EC]">
 					<div className="reveal fade-bottom">
-						<div className="md:hidden">
-							<Image
-								src="/images/wakecup/usage_mobile.png"
-								alt="wakecup-usage"
-								width={232}
-								height={147}
-							/>
-						</div>
-						<div className="hidden md:block">
-							<Image
-								src="/images/wakecup/usage_web.png"
-								alt="wakecup-usage"
-								width={368}
-								height={247}
-							/>
-						</div>
+						<ResponsiveImage
+							mobile={{
+								src: "/images/wakecup/usage_mobile.png",
+								alt: "wakecup-usage",
+								width: 232,
+								height: 147,
+							}}
+							web={{
+								src: "/images/wakecup/usage_web.png",
+								alt: "wakecup-usage",
+								width: 368,
+								height: 247,
+							}}
+						/>
 					</div>
 					<div className="reveal fade-bottom-text mt-10">
 						<p>몇 번 사용되었는지</p>
 						<p>한눈에!</p>
 					</div>
 				</div>
-				<div className="flex flex-col items-center md:rounded-[30px] md:bg-[#EAF4EC] md:px-[80px] md:pt-[69px] md:pb-[43px]">
+				<div className="flex flex-col items-center md:px-[80px] md:pt-[69px] md:pb-[43px] lg:rounded-[30px] lg:bg-[#EAF4EC]">
 					<div className="reveal fade-bottom">
-						<div className="md:hidden">
-							<Image
-								src="/images/wakecup/revenue_mobile.png"
-								alt="wakecup-usage"
-								width={200}
-								height={157}
-							/>
-						</div>
-						<div className="hidden md:block">
-							<Image
-								src="/images/wakecup/revenue_web.png"
-								alt="wakecup-usage"
-								width={328}
-								height={259}
-							/>
-						</div>
+						<ResponsiveImage
+							mobile={{
+								src: "/images/wakecup/revenue_mobile.png",
+								alt: "wakecup-revenue",
+								width: 200,
+								height: 157,
+							}}
+							web={{
+								src: "/images/wakecup/revenue_web.png",
+								alt: "wakecup-revenue",
+								width: 328,
+								height: 259,
+							}}
+						/>
 					</div>
 					<div className="reveal fade-bottom-text mt-10">
 						<p>쓰여진 횟수만큼</p>
