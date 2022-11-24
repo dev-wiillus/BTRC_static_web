@@ -10,7 +10,7 @@ function Layout({ children }: any) {
 	const activeNotification = notificationCtx.notification;
 
 	return (
-		<div className="md:mx-xl flex h-full min-h-screen flex-col md:container">
+		<div className="md:mx-xl flex h-full min-h-screen min-w-[360px] flex-col md:container">
 			<Header />
 			<main>{children}</main>
 			<Footer />

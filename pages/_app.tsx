@@ -13,12 +13,12 @@ export default function App({ Component, pageProps }: AppProps) {
 			/>
 			<Script id="google-analytics" strategy="afterInteractive">
 				{`
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){window.dataLayer.push(arguments);}
-			  gtag('js', new Date());
-	
-			  gtag('config', '${process.env.GA_TRACKING_ID}');
-			`}
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){window.dataLayer.push(arguments);}
+					gtag('js', new Date());
+			
+					gtag('config', '${process.env.GA_TRACKING_ID}');
+				`}
 			</Script>
 			<NotificationContextProvider>
 				<Layout>
