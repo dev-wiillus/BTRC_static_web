@@ -7,7 +7,7 @@ import { AgeType, ApiResponseType, GenderType } from "../types";
 import VerifyPhone from "../VerifyPhone";
 import Modal from "./Modal";
 
-const TITLE = "텀블러 기부 신청하기";
+const TITLE = "텀블러 공유 신청하기";
 
 export interface IForm {
 	name: string;
@@ -171,7 +171,7 @@ export default function WakecupApplication() {
 				<div className="form-control w-full text-[18px]">
 					<div className="flex flex-col items-start gap-4">
 						<label className="text-base font-bold text-text-primary">
-							기부 예정 텀블러 수
+							공유 예정 텀블러 수
 						</label>
 						<label className="input-group">
 							<input

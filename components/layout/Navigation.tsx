@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const menu = [
-	{ name: "텀블러 기부", path: "/wakecup" },
+	{ name: "텀블러 공유", path: "/wakecup" },
 	{ name: "파트너십", path: "/partnership" },
 ];
 

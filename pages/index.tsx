@@ -31,11 +31,3 @@ export default function HomePage(props: any) {
 		</Fragment>
 	);
 }
-
-export async function getStaticProps() {
-	// fetch data from an API
-
-	return {
-		props: {},
-	};
-}

@@ -6,15 +6,15 @@ import WakecupApplication from "../modal/WakecupApplication";
 export default function Wakecup() {
 	return (
 		<>
-			<div className="mt-36 md:mt-40 md:mb-[120px]">
+			<div className="h-[568px] bg-bg-primary pt-[80px] md:h-[404px] md:pt-0">
 				<p className="px-6 font-chaney text-base font-normal text-primary md:bg-button-secondary md:px-[40px] md:text-lg md:leading-[40px] md:text-white">
 					COMING SOON
 				</p>
-				<div className="grid grid-cols-1 px-6 md:grid-cols-2 md:px-[40px]">
+				<div className="grid grid-cols-1 px-6 md:grid-cols-2 md:px-[40px] md:pt-[80px]">
 					<div className="text-[24px] font-bold">
-						<div className="mt-2 md:mt-[40px] md:text-[40px]">
+						<div className="mt-2 md:text-[40px]">
 							<h1 className="md:text-[18px] md:text-primary">
-								텀블러 기부하고 수익까지!
+								텀블러 공유하고 수익까지!
 							</h1>
 							<h1 className="md:mt-2 md:leading-[48px]">
 								<span className="font-chaney font-normal md:text-[38px]">
