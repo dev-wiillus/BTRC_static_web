@@ -4,8 +4,8 @@ export default function Hero() {
 	return (
 		<Container
 			title="partnership"
-			bgSrcMobile="/images/partnership/bg_mobile.png"
-			bgSrcWeb="/images/partnership/bg_web.png"
+			bgSrcMobile="/images/partnership/bg_mobile.jpg"
+			bgSrcWeb="/images/partnership/bg_web.jpg"
 		>
 			<div className="mt-auto mb-[78px] mr-[24px] text-right text-[40px] leading-[49px] md:mb-[40px] md:mr-[40px] md:text-[80px] md:leading-[98px]">
 				<div>
