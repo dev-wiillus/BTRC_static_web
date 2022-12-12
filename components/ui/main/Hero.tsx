@@ -4,8 +4,8 @@ export default function Hero() {
 	return (
 		<Container
 			title="btrc"
-			bgSrcMobile="/images/main/bg_mobile.png"
-			bgSrcWeb="/images/main/bg_web.png"
+			bgSrcMobile="/images/main/bg_mobile.jpg"
+			bgSrcWeb="/images/main/bg_web.jpg"
 		>
 			<div className="mt-auto mb-20 mr-6 text-right text-[40px] leading-[49px] md:mr-[40px] md:text-[80px] md:leading-[98px]">
 				<div>
