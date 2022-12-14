@@ -5,10 +5,10 @@
 - [x] Routing
 - [x] SEO
 - [ ] video/image rendering
-- [ ] animation effect
-- [x] responsive web
-- [x] DB 연동(CR)
-- [x] 폰트
+- [o] animation effect
+- [o] responsive web
+- [o] DB 연동(CR)
+- [o] 폰트
 
 
 ## spec
