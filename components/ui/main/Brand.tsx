@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Brand() {
 	return (
-		<div className="mt-[72px] md:mt-[24px] md:mr-[32px] md:h-[684px] md:border-[6px] md:border-primary">
+		<div className="mt-[72px] md:mt-[24px] md:mr-[32px] md:h-[684px] md:border-[6px] md:border-primary lg:h-[716px]">
 			<div className="flex flex-col items-center gap-y-10 py-20 md:gap-y-[54px] md:pt-[40px]">
 				<div className="text-center">
 					<div className="flex flex-row gap-x-2 md:flex-col md:gap-x-4 md:text-primary lg:flex-row">

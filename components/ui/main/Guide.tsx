@@ -11,7 +11,7 @@ export default function Guide() {
 			</div>
 
 			<div
-				className="absolute top-[379px] hidden w-full md:block md:bg-[url('../public/images/main/guide_line_web.png')]"
+				className="absolute top-[379px] hidden w-full md:block md:bg-[url('../public/images/main/guide_line_web.png')] md:bg-center"
 				style={{ height: "-webkit-fill-available" }}
 			/>
 			<div className="md:hidden">
@@ -65,12 +65,12 @@ export default function Guide() {
 				</div>
 			</div>
 
-			<div className="my-24 hidden h-[250px] w-full flex-col gap-y-[279px] px-[250px] font-bold md:flex">
-				<div className="reveal fade-right flex flex-1 gap-x-[52px] self-start">
+			<div className="my-24 hidden h-[250px] w-full flex-col gap-y-[279px] px-[250px] font-bold md:flex md:items-center">
+				<div className="reveal fade-right flex w-[540px] flex-1 gap-x-[52px]">
 					<div className="relative h-[224.89px] w-[300px] rounded-[1rem]">
 						<Image src="/images/main/guide_get.png" fill alt="guide-get" />
 					</div>
-					<div>
+					<div className="w-[220px]">
 						<span className="text-[56px]">받고,</span>
 						<p className="mt-[42px] text-[24px] font-semibold text-text-gray-primary">
 							원하는 텀블러에
@@ -79,8 +79,8 @@ export default function Guide() {
 						</p>
 					</div>
 				</div>
-				<div className="reveal fade-left mr-20 flex flex-1 gap-x-[79px] self-end">
-					<div>
+				<div className="reveal fade-left mr-20 flex w-[595px] flex-1 gap-x-[79px]">
+					<div className="w-[220px]">
 						<span className="text-[56px]">즐기고,</span>
 						<p className="mt-[42px] text-[24px] font-semibold text-text-gray-primary">
 							일주일간
@@ -92,7 +92,7 @@ export default function Guide() {
 						<Image src="/images/main/guide_drink.png" fill alt="guide-drink" />
 					</div>
 				</div>
-				<div className="reveal fade-right flex flex-1 gap-x-[115px] self-start">
+				<div className="reveal fade-right flex w-[600px] flex-1 gap-x-[115px]">
 					<div className="relative h-[224.89px] w-[300px] rounded-[1rem]">
 						<Image
 							src="/images/main/guide_return.png"
@@ -100,7 +100,7 @@ export default function Guide() {
 							alt="guide-return"
 						/>
 					</div>
-					<div>
+					<div className="w-[240px]">
 						<span className="text-[56px]">반납하고,</span>
 						<p className="mt-[42px] text-[24px] font-semibold text-text-gray-primary">
 							BTRC 스팟에
