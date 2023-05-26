@@ -7,7 +7,7 @@ export default async function handler(
 	res: NextApiResponse,
 ) {
 	try {
-		const database_id = process.env.NOTION_DATABASE_ID_PARTNERSHIP
+		const database_id = process.env.NOTION_DATABASE_ID_PARTNERSHIP;
 		if (req.method === "POST" && database_id) {
 			const data = req.body;
 
@@ -21,7 +21,7 @@ export default async function handler(
 			const result = await notion.pages.create({
 				parent: {
 					type: "database_id",
-					database_id
+					database_id,
 				},
 				properties: {
 					company: {
@@ -70,6 +70,7 @@ export default async function handler(
 					}),
 				},
 			});
+			console.log(result);
 
 			res.status(201).json({ ok: true, message: "Success" });
 		}

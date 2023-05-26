@@ -13,7 +13,6 @@ const nextConfig = () => {
 			NOTION_DATABASE_ID_SERVICE: process.env.NOTION_DATABASE_ID_SERVICE,
 			NOTION_DATABASE_ID_WAKECUP: process.env.NOTION_DATABASE_ID_WAKECUP,
 			GA_TRACKING_ID: process.env.GA_TRACKING_ID,
-			...env_params,
 		},
 	};
 };
